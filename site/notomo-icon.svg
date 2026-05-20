@@ -1,0 +1,13 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="glyphGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+  </defs>
+  <!-- v3-K: Notomo reverse-N in "Slate Agent" style. 
+       Refines the Craft-style aesthetic with a professional 
+       Deep Slate gradient that fits the Notomo brand better. -->
+  <path d="M280 350 C 297 417, 319 765, 380 752 C 441 739, 583 285, 644 272 C 705 259, 727 607, 744 674" 
+        stroke="url(#glyphGradient)" stroke-width="160" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

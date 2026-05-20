@@ -1,14 +1,541 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" style="color-scheme: light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Notomo</title>
+  <title>Notomo - Native macOS companion for Apple Notes</title>
+  <meta name="description" content="Notomo is a native macOS companion for Apple Notes with Markdown-style shortcuts, slash commands, and AI chat that can use your current note as context.">
+  <meta property="og:title" content="Notomo - Native macOS companion for Apple Notes">
+  <meta property="og:description" content="Markdown-style shortcuts, slash commands, and AI chat for Apple Notes.">
+  <meta property="og:image" content="site/screenshots/screenshot-1.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="site/notomo-icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://rsms.me" crossorigin>
+  <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --text: #334155;
+      --muted: #64748b;
+      --quiet: #94a3b8;
+      --line: #e2e8f0;
+      --white: #0f172a;
+      --button: #172033;
+      --button-text: #f8fafc;
+      font-family: InterVariable, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      background:
+        radial-gradient(circle at 50% -18%, rgba(148, 163, 184, 0.24), transparent 32rem),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 42%, #eef3f7 100%);
+      color: var(--text);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .shell {
+      max-width: 896px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      font-size: 14px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--white);
+      font-weight: 500;
+      transition: opacity 160ms ease;
+    }
+
+    .brand:hover {
+      opacity: 0.8;
+    }
+
+    .brand img {
+      width: 24px;
+      height: 24px;
+      padding: 3px;
+      border-radius: 6px;
+      background: #ffffff;
+      box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.08), 0 8px 20px rgba(15, 23, 42, 0.08);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: #64748b;
+    }
+
+    .nav-links a {
+      transition: color 160ms ease;
+    }
+
+    .nav-links a:hover {
+      color: #0f172a;
+    }
+
+    .hero {
+      position: relative;
+      padding: 64px 0 24px;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: fixed;
+      left: 50%;
+      top: -28%;
+      z-index: -1;
+      width: min(1600px, 140vw);
+      height: 620px;
+      transform: translateX(-50%);
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 45% 50%, rgba(148, 163, 184, 0.18), transparent 30%),
+        radial-gradient(ellipse at 54% 46%, rgba(71, 85, 105, 0.08), transparent 28%);
+      filter: blur(48px);
+    }
+
+    .app-icon {
+      width: 80px;
+      height: 80px;
+      padding: 10px;
+      margin: 0 auto 32px;
+      border-radius: 20px;
+      background: #ffffff;
+      box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.08), 0 24px 80px rgba(15, 23, 42, 0.1);
+    }
+
+    h1 {
+      max-width: 30ch;
+      margin: 0 auto;
+      color: var(--white);
+      font-size: clamp(40px, 6vw, 56px);
+      font-weight: 500;
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+
+    .lede {
+      max-width: 48ch;
+      margin: 24px auto 0;
+      color: #64748b;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 0 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1;
+      transition: background 160ms ease, color 160ms ease;
+    }
+
+    .button.primary {
+      color: var(--button-text);
+      background: var(--button);
+    }
+
+    .button.primary:hover {
+      background: #24324a;
+    }
+
+    .button.secondary {
+      color: #64748b;
+      background: transparent;
+    }
+
+    .button.secondary:hover {
+      color: #0f172a;
+    }
+
+    .version {
+      margin: 16px 0 0;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    .screenshot {
+      padding: 16px 0 64px;
+    }
+
+    .screenshot-frame {
+      max-width: 896px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .screenshot-frame img {
+      width: 100%;
+      border-radius: 10px;
+      outline: 1px solid rgba(15, 23, 42, 0.1);
+      outline-offset: -1px;
+      box-shadow: 0 30px 90px rgba(15, 23, 42, 0.13);
+      user-select: none;
+    }
+
+    .summary {
+      padding: 24px 0 56px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .summary-item h2 {
+      margin: 0;
+      color: #172033;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .summary-item p {
+      margin: 8px 0 0;
+      color: #64748b;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .features {
+      padding: 72px 0 88px;
+    }
+
+    .feature-groups {
+      max-width: 768px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .feature-group + .feature-group {
+      margin-top: 64px;
+    }
+
+    .feature-kicker {
+      margin: 0 0 24px;
+      color: #94a3b8;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    dl {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+    }
+
+    .feature-row {
+      display: flex;
+      gap: 8px;
+      align-items: baseline;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    dt {
+      flex-shrink: 0;
+      color: #172033;
+      font-weight: 500;
+    }
+
+    dd {
+      margin: 0;
+      color: #64748b;
+    }
+
+    .privacy {
+      padding: 0 0 72px;
+    }
+
+    .privacy .shell {
+      max-width: 768px;
+    }
+
+    .privacy h2 {
+      margin: 0;
+      color: #172033;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .privacy p {
+      margin: 10px 0 0;
+      color: #64748b;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 0 48px;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    footer .shell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    footer nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    footer a {
+      transition: color 160ms ease;
+    }
+
+    footer a:hover {
+      color: #334155;
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        padding-top: 48px;
+      }
+
+      .summary-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .feature-row {
+        display: block;
+      }
+
+      dd::before {
+        content: "";
+      }
+    }
+
+    @media (max-width: 520px) {
+      .shell,
+      .screenshot-frame,
+      .feature-groups {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+
+      .nav-links a[href="https://github.com/natsustan/notomo"] {
+        display: none;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .lede {
+        font-size: 17px;
+      }
+
+      .actions {
+        gap: 12px;
+      }
+
+      footer .shell {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      footer nav {
+        gap: 18px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header class="shell nav" aria-label="Primary">
+    <a class="brand" href="./" aria-label="Notomo home">
+      <img src="site/notomo-icon.svg" alt="">
+      <span>Notomo</span>
+    </a>
+    <nav class="nav-links" aria-label="Navigation">
+      <a href="changelog.html">Changelog</a>
+      <a href="https://github.com/natsustan/notomo">GitHub</a>
+      <a href="Notomo.dmg">Download</a>
+    </nav>
+  </header>
+
   <main>
-    <h1>Notomo</h1>
-    <p>Website coming soon.</p>
+    <section class="hero">
+      <div class="shell">
+        <img class="app-icon" src="site/notomo-icon.svg" alt="">
+        <h1>Notomo. A native macOS companion for Apple Notes.</h1>
+        <p class="lede">Markdown-style shortcuts, a slash command menu, and AI chat stay close to the note you are already writing.</p>
+        <div class="actions">
+          <a class="button primary" href="Notomo.dmg">Download for macOS</a>
+          <a class="button secondary" href="https://github.com/natsustan/notomo">GitHub</a>
+        </div>
+        <p class="version">v0.3.0 &middot; Requires macOS 15 or newer &middot; Apple Notes required</p>
+      </div>
+    </section>
+
+    <section class="screenshot" aria-label="Notomo screenshot">
+      <div class="screenshot-frame">
+        <img src="site/screenshots/screenshot-1.png" alt="Notomo running beside Apple Notes with an assistant panel.">
+      </div>
+    </section>
+
+    <section class="summary" aria-label="What Notomo does">
+      <div class="shell summary-grid">
+        <article class="summary-item">
+          <h2>Works beside Apple Notes</h2>
+          <p>Notomo appears when Notes is active and stays out of the way when it is not.</p>
+        </article>
+        <article class="summary-item">
+          <h2>Turns typing into commands</h2>
+          <p>Use Markdown triggers for headings, checklists, code-style text, quotes, and note-link helpers.</p>
+        </article>
+        <article class="summary-item">
+          <h2>Adds local AI workflows</h2>
+          <p>Ask an assistant to use selected text, the current line, visible note text, or the full note as context.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature-groups">
+        <div class="feature-group">
+          <h2 class="feature-kicker">Notes Workflow</h2>
+          <dl>
+            <div class="feature-row">
+              <dt>Markdown triggers</dt>
+              <dd><span aria-hidden="true">&mdash; </span>Type familiar shortcuts for titles, headings, checklists, monostyled text, block quotes, and CJK-friendly aliases.</dd>
+            </div>
+            <div class="feature-row">
+              <dt>Slash commands</dt>
+              <dd><span aria-hidden="true">&mdash; </span>Open formatting actions, table insertion, and AI chat from a keyboard-first command panel.</dd>
+            </div>
+            <div class="feature-row">
+              <dt>Inline toolbar</dt>
+              <dd><span aria-hidden="true">&mdash; </span>Apply common Apple Notes formatting near the current editing context.</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="feature-group">
+          <h2 class="feature-kicker">AI Context</h2>
+          <dl>
+            <div class="feature-row">
+              <dt>Note-aware chat</dt>
+              <dd><span aria-hidden="true">&mdash; </span>Use selected text, the current line, visible note text, full note content, and recovered inline images when available.</dd>
+            </div>
+            <div class="feature-row">
+              <dt>Local providers</dt>
+              <dd><span aria-hidden="true">&mdash; </span>Work with installed Codex or Gemini command line tools, with unavailable models hidden from the picker.</dd>
+            </div>
+            <div class="feature-row">
+              <dt>Chat history</dt>
+              <dd><span aria-hidden="true">&mdash; </span>Keep past AI conversations and retained note image attachments.</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="feature-group">
+          <h2 class="feature-kicker">Mac Native</h2>
+          <dl>
+            <div class="feature-row">
+              <dt>Menu bar access</dt>
+              <dd><span aria-hidden="true">&mdash; </span>Quick open from the menu bar or keyboard-focused Apple Notes workflows.</dd>
+            </div>
+            <div class="feature-row">
+              <dt>Settings</dt>
+              <dd><span aria-hidden="true">&mdash; </span>Control launch at login, menu bar visibility, appearance, language, feature preferences, permissions, and AI providers.</dd>
+            </div>
+            <div class="feature-row">
+              <dt>Sparkle updates</dt>
+              <dd><span aria-hidden="true">&mdash; </span>Online update support through the public appcast feed.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="privacy">
+      <div class="shell">
+        <h2>Your notes stay in Apple Notes.</h2>
+        <p>Notomo observes and assists from the outside. It does not replace Apple Notes or store notes in its own database.</p>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="shell">
+      <span>&copy; 2026 Notomo</span>
+      <nav aria-label="Footer">
+        <a href="changelog.html">Changelog</a>
+        <a href="appcast.xml">Updates</a>
+        <a href="https://github.com/natsustan/notomo">GitHub</a>
+      </nav>
+    </div>
+  </footer>
 </body>
 </html>
