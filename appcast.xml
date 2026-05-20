@@ -3,12 +3,12 @@
     <channel>
         <title>Notomo</title>
         <item>
-            <title>0.2.0</title>
-            <pubDate>Wed, 20 May 2026 10:38:33 +0800</pubDate>
-            <sparkle:version>10</sparkle:version>
-            <sparkle:shortVersionString>0.2.0</sparkle:shortVersionString>
+            <title>0.3.0</title>
+            <pubDate>Wed, 20 May 2026 11:20:17 +0800</pubDate>
+            <sparkle:version>12</sparkle:version>
+            <sparkle:shortVersionString>0.3.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://natsustan.github.io/notomo-app/Notomo.zip" length="11681979" type="application/octet-stream" sparkle:edSignature="UlpAnkYWt8xdqHJZOaMnl9Pv38G5n4z67KZmdi0Jm9EbcNlK1C2m7nyU8ahWOfcsvg4nMxddIK4Y2GI8QKDxCQ=="/>
+            <enclosure url="https://natsustan.github.io/notomo-app/Notomo.zip" length="11683846" type="application/octet-stream" sparkle:edSignature="VlZ32RqsvdA59lE+DSe869FFfscm0TDqpFhIu5WLjP30Zyev9d02O9wlbLTQxpjIdfxGQbLYpBoXq/RK6YvyAg=="/>
         </item>
     </channel>
 </rss>
