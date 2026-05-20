@@ -15,19 +15,17 @@
   <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
   <style>
     :root {
-      --bg: #fbfbfa;
-      --text: #334155;
-      --muted: #64748b;
-      --quiet: #94a3b8;
-      --line: #e2e8f0;
-      --white: #0f172a;
-      --button: #172033;
-      --button-text: #f8fafc;
+      --bg: oklch(98.6% 0.012 82);
+      --surface: oklch(99.2% 0.008 82);
+      --text: oklch(22% 0.035 258);
+      --muted: oklch(50% 0.044 256);
+      --quiet: oklch(68% 0.038 256);
+      --line: oklch(90.5% 0.018 82);
+      --button: oklch(22% 0.035 258);
+      --button-text: oklch(98% 0.01 82);
       font-family: Inter Variable,Inter,sans-serif;
       font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-      background:
-        radial-gradient(circle at 50% -18%, rgba(203, 199, 190, 0.16), transparent 32rem),
-        linear-gradient(180deg, #fffefa 0%, var(--bg) 46%, #f7f8f6 100%);
+      background: var(--bg);
       color: var(--text);
     }
 
@@ -43,8 +41,10 @@
       margin: 0;
       min-width: 320px;
       background:
-        radial-gradient(circle at 50% -18%, rgba(203, 199, 190, 0.14), transparent 32rem),
-        linear-gradient(180deg, #fffefa 0%, var(--bg) 46%, #f7f8f6 100%);
+        radial-gradient(ellipse at 50% 43rem, oklch(75% 0.11 63 / 0.12), transparent 38rem),
+        linear-gradient(180deg, oklch(99.4% 0.009 82) 0%, var(--bg) 58%, oklch(97.3% 0.018 82) 100%);
+      background-size: auto, auto;
+      background-position: center top, center top;
       color: var(--text);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
@@ -62,9 +62,9 @@
     }
 
     .shell {
-      max-width: 800px;
+      max-width: 760px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 36px;
     }
 
     .nav {
@@ -82,7 +82,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      color: var(--white);
+      color: var(--text);
       font-weight: 500;
       transition: opacity 160ms ease;
     }
@@ -96,8 +96,8 @@
       height: 24px;
       padding: 3px;
       border-radius: 6px;
-      background: #ffffff;
-      box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.08), 0 8px 20px rgba(15, 23, 42, 0.08);
+      background: oklch(99.3% 0.008 82);
+      box-shadow: inset 0 0 0 1px oklch(22% 0.035 258 / 0.08), 0 8px 20px oklch(22% 0.035 258 / 0.08);
     }
 
     .nav-links {
@@ -112,12 +112,12 @@
     }
 
     .nav-links a:hover {
-      color: #0f172a;
+      color: var(--text);
     }
 
     .hero {
       position: relative;
-      padding: 64px 0 24px;
+      padding: clamp(68px, 10vh, 108px) 0 24px;
       text-align: left;
     }
 
@@ -125,41 +125,44 @@
       content: "";
       position: fixed;
       left: 50%;
-      top: -28%;
+      top: -22%;
       z-index: -1;
       width: min(1600px, 140vw);
       height: 620px;
       transform: translateX(-50%);
       pointer-events: none;
       background:
-        radial-gradient(ellipse at 45% 50%, rgba(203, 199, 190, 0.14), transparent 30%),
-        radial-gradient(ellipse at 54% 46%, rgba(120, 113, 108, 0.05), transparent 28%);
+        radial-gradient(ellipse at 45% 50%, oklch(85% 0.035 82 / 0.18), transparent 30%),
+        radial-gradient(ellipse at 54% 46%, oklch(62% 0.032 256 / 0.08), transparent 28%);
       filter: blur(48px);
     }
 
     .app-icon {
-      width: 60px;
-      /*height: 80px;*/
-      padding-bottom: 32px;
-      /*margin: 0 auto 32px;*/
+      width: 64px;
+      height: 64px;
+      margin: 0 0 38px;
+      border-radius: 18px;
+      box-shadow: 0 14px 36px oklch(22% 0.035 258 / 0.1);
     }
 
     h1 {
       max-width: 30ch;
       margin: 0;
-      color: var(--white);
-      font-size: clamp(32px, 6vw, 40px);
-      font-weight: 500;
-      line-height: 1.2;
-      /*letter-spacing: 0;*/
+      color: var(--text);
+      font-size: clamp(28px, 4.4vw, 32px);
+      font-weight: 520;
+      line-height: 1.14;
+      /*text-wrap: balance;*/
     }
 
     .lede {
-      max-width: 48ch;
-      margin: 24px 0 0;
-      color: #64748b;
-      font-size: 24px;
-      line-height: 1.6;
+      max-width: 45ch;
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: 22px;
+      font-weight: 520;
+      line-height: 1.20;
+      /*text-wrap: balance;*/
     }
 
     .actions {
@@ -167,21 +170,21 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: flex-start;
-      gap: 16px;
-      margin-top: 32px;
+      gap: 12px;
+      margin-top: 34px;
     }
 
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 36px;
-      padding: 0 12px;
-      border-radius: 6px;
-      font-size: 14px;
-      font-weight: 500;
+      min-height: 40px;
+      padding: 0 22px;
+      border-radius: 9px;
+      font-size: 15px;
+      font-weight: 600;
       line-height: 1;
-      transition: background 160ms ease, color 160ms ease;
+      transition: background 160ms ease, color 160ms ease, transform 160ms ease;
     }
 
     .button.primary {
@@ -190,74 +193,90 @@
     }
 
     .button.primary:hover {
-      background: #24324a;
+      background: oklch(28% 0.04 258);
+      transform: translateY(-1px);
     }
 
     .button.secondary {
-      color: #64748b;
+      color: var(--muted);
       background: transparent;
     }
 
     .button.secondary:hover {
-      color: #0f172a;
+      color: var(--text);
     }
 
     .version {
-      margin: 16px 0 0;
-      color: #94a3b8;
+      margin: 8px 0 0;
+      color: var(--quiet);
       font-size: 14px;
+      font-weight: 500;
     }
 
     .screenshot {
-      padding: 16px 0 64px;
+      position: relative;
+      padding: 30px 0 30px;
+    }
+
+    .screenshot::before {
+      content: "";
+      position: absolute;
+      inset: -74px 0 0;
+      pointer-events: none;
+      background-image: radial-gradient(circle at center, oklch(83% 0.07 66 / 0.22) 0 1px, transparent 1.2px);
+      background-position: center top;
+      background-size: 18px 18px;
+      mask-image: linear-gradient(180deg, transparent 0%, black 22%, black 78%, transparent 100%);
     }
 
     .screenshot-frame {
-      max-width: 896px;
+      position: relative;
+      z-index: 1;
+      max-width: 1128px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 88px;
     }
 
     .screenshot-frame img {
       width: 100%;
-      border-radius: 10px;
-      outline: 1px solid rgba(15, 23, 42, 0.1);
+      border-radius: 12px;
+      outline: 1px solid oklch(22% 0.035 258 / 0.12);
       outline-offset: -1px;
-      box-shadow: 0 30px 90px rgba(43, 40, 36, 0.1);
+      box-shadow: 0 34px 100px oklch(22% 0.035 258 / 0.16);
       user-select: none;
     }
 
     .summary {
-      padding: 24px 0 56px;
+      padding: 26px 0 66px;
     }
 
     .summary-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
+      gap: 34px;
     }
 
     .summary-item h2 {
       margin: 0;
-      color: #172033;
-      font-size: 15px;
-      font-weight: 500;
+      color: var(--text);
+      font-size: 17px;
+      font-weight: 620;
       line-height: 1.4;
     }
 
     .summary-item p {
       margin: 8px 0 0;
-      color: #64748b;
-      font-size: 14px;
-      line-height: 1.65;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
     }
 
     .features {
-      padding: 72px 0 88px;
+      padding: 32px 0 68px;
     }
 
     .feature-groups {
-      max-width: 768px;
+      max-width: 760px;
       margin: 0 auto;
       padding: 0 24px;
     }
@@ -268,7 +287,7 @@
 
     .feature-kicker {
       margin: 0 0 24px;
-      color: #94a3b8;
+      color: var(--quiet);
       /*font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;*/
       font-size: 12px;
       font-weight: 600;
@@ -293,13 +312,17 @@
 
     dt {
       flex-shrink: 0;
-      color: #172033;
-      font-weight: 500;
+      color: var(--text);
+      font-weight: 620;
+    }
+
+    dt::after {
+      content: ":";
     }
 
     dd {
       margin: 0;
-      color: #64748b;
+      color: var(--muted);
     }
 
     .privacy {
@@ -312,15 +335,15 @@
 
     .privacy h2 {
       margin: 0;
-      color: #172033;
-      font-size: 18px;
-      font-weight: 500;
+      color: var(--text);
+      font-size: 20px;
+      font-weight: 650;
       line-height: 1.4;
     }
 
     .privacy p {
       margin: 10px 0 0;
-      color: #64748b;
+      color: var(--muted);
       font-size: 14px;
       line-height: 1.7;
     }
@@ -328,7 +351,7 @@
     footer {
       border-top: 1px solid var(--line);
       padding: 32px 0 48px;
-      color: #94a3b8;
+      color: var(--quiet);
       font-size: 14px;
     }
 
@@ -349,12 +372,26 @@
     }
 
     footer a:hover {
-      color: #334155;
+      color: var(--text);
     }
 
     @media (max-width: 760px) {
       .hero {
-        padding-top: 48px;
+        padding-top: 58px;
+      }
+
+      .app-icon {
+        width: 58px;
+        height: 58px;
+        margin-bottom: 30px;
+      }
+
+      h1 {
+        max-width: 15ch;
+      }
+
+      .lede {
+        max-width: 24ch;
       }
 
       .summary-grid {
@@ -388,7 +425,12 @@
       }
 
       .lede {
-        font-size: 17px;
+        font-size: 21px;
+      }
+
+      .button {
+        min-height: 46px;
+        font-size: 15px;
       }
 
       .actions {
@@ -423,7 +465,7 @@
       <div class="shell">
         <img class="app-icon" src="site/notomo-icon.png" alt="">
         <h1>Notomo brings Markdown shortcuts and AI assistant to Apple Notes.</h1>
-        <p class="lede">Use slash commands and note-aware AI beside the note you are already editing. Your notes stay in Apple Notes.</p>
+        <p class="lede">Use slash commands and note-aware AI beside the note you are already editing.</p>
         <div class="actions">
           <a class="button primary" href="Notomo.dmg">Download for macOS</a>
         </div>
@@ -461,15 +503,15 @@
           <dl>
             <div class="feature-row">
               <dt>Markdown triggers</dt>
-              <dd><span aria-hidden="true">&mdash; </span>Type familiar shortcuts for titles, headings, checklists, monostyled text, block quotes, and CJK-friendly aliases.</dd>
+              <dd>Type familiar shortcuts for titles, headings, checklists, monostyled text, block quotes, and CJK-friendly aliases.</dd>
             </div>
             <div class="feature-row">
               <dt>Slash commands</dt>
-              <dd><span aria-hidden="true">&mdash; </span>Open formatting actions, table insertion, and AI chat from a keyboard-first command panel.</dd>
+              <dd>Open formatting actions, table insertion, and AI chat from a keyboard-first command panel.</dd>
             </div>
             <div class="feature-row">
               <dt>Inline toolbar</dt>
-              <dd><span aria-hidden="true">&mdash; </span>Apply common Apple Notes formatting near the current editing context.</dd>
+              <dd>Apply common Apple Notes formatting near the current editing context.</dd>
             </div>
           </dl>
         </div>
@@ -479,15 +521,15 @@
           <dl>
             <div class="feature-row">
               <dt>Note-aware chat</dt>
-              <dd><span aria-hidden="true">&mdash; </span>Use selected text, the current line, visible note text, full note content, and recovered inline images when available.</dd>
+              <dd>Use selected text, the current line, visible note text, full note content, and recovered inline images when available.</dd>
             </div>
             <div class="feature-row">
               <dt>Local providers</dt>
-              <dd><span aria-hidden="true">&mdash; </span>Work with installed Codex or Gemini command line tools, with unavailable models hidden from the picker.</dd>
+              <dd>Work with installed Codex or Gemini command line tools, with unavailable models hidden from the picker.</dd>
             </div>
             <div class="feature-row">
               <dt>Chat history</dt>
-              <dd><span aria-hidden="true">&mdash; </span>Keep past AI conversations and retained note image attachments.</dd>
+              <dd>Keep past AI conversations and retained note image attachments.</dd>
             </div>
           </dl>
         </div>
@@ -497,15 +539,15 @@
           <dl>
             <div class="feature-row">
               <dt>Menu bar access</dt>
-              <dd><span aria-hidden="true">&mdash; </span>Quick open from the menu bar or keyboard-focused Apple Notes workflows.</dd>
+              <dd>Quick open from the menu bar or keyboard-focused Apple Notes workflows.</dd>
             </div>
             <div class="feature-row">
               <dt>Settings</dt>
-              <dd><span aria-hidden="true">&mdash; </span>Control launch at login, menu bar visibility, appearance, language, feature preferences, permissions, and AI providers.</dd>
+              <dd>Control launch at login, menu bar visibility, appearance, language, feature preferences, permissions, and AI providers.</dd>
             </div>
             <div class="feature-row">
               <dt>Sparkle updates</dt>
-              <dd><span aria-hidden="true">&mdash; </span>Online update support through the public appcast feed.</dd>
+              <dd>Online update support through the public appcast feed.</dd>
             </div>
           </dl>
         </div>
