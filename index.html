@@ -15,7 +15,7 @@
   <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
   <style>
     :root {
-      --bg: oklch(98.6% 0.012 82);
+      /*--bg: oklch(98.6% 0.012 82);*/
       --surface: oklch(99.2% 0.008 82);
       --text: oklch(22% 0.035 258);
       --muted: oklch(50% 0.044 256);
@@ -117,7 +117,7 @@
 
     .hero {
       position: relative;
-      padding: clamp(68px, 10vh, 108px) 0 24px;
+      padding: clamp(60px, 10vh, 108px) 0 24px;
       text-align: left;
     }
 
@@ -272,57 +272,99 @@
     }
 
     .features {
-      padding: 32px 0 68px;
+      padding: 26px 0 76px;
     }
 
     .feature-groups {
-      max-width: 760px;
+      max-width: 1120px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
+    .feature-group {
+      display: grid;
+      grid-template-columns: minmax(260px, 500px) minmax(360px, 680px);
+      align-items: center;
+      justify-content: space-between;
+      column-gap: clamp(34px, 5vw, 68px);
+    }
+
     .feature-group + .feature-group {
-      margin-top: 64px;
+      margin-top: clamp(78px, 9vw, 120px);
+    }
+
+    .feature-group:nth-child(even) {
+      grid-template-columns: minmax(360px, 680px) minmax(260px, 500px);
+    }
+
+    .feature-group:nth-child(even) .feature-copy {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .feature-group:nth-child(even) .feature-shot {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .feature-copy {
+      max-width: 500px;
     }
 
     .feature-kicker {
-      margin: 0 0 24px;
+      margin: 0 0 12px;
       color: var(--quiet);
-      /*font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;*/
-      font-size: 12px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 650;
       line-height: 1;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
     }
 
-    dl {
-      display: grid;
-      gap: 12px;
+    .feature-copy h2 {
+      /*max-width: 13ch;*/
       margin: 0;
-    }
-
-    .feature-row {
-      display: flex;
-      gap: 8px;
-      align-items: baseline;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    dt {
-      flex-shrink: 0;
       color: var(--text);
-      font-weight: 620;
+      font-size: 18px;
+      font-weight: 650;
+      line-height: 1.06;
+      letter-spacing: 0;
     }
 
-    dt::after {
-      content: ":";
-    }
-
-    dd {
-      margin: 0;
+    .feature-copy p {
+      max-width: 60ch;
+      margin: 16px 0 0;
       color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.55;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 8px;
+      padding-left: 1.15em;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .feature-list li::marker {
+      color: oklch(63% 0.11 75);
+    }
+
+    .feature-shot {
+      width: 100%;
+      margin: 0;
+      overflow: hidden;
+      border-radius: 14px;
+      outline: 1px solid oklch(22% 0.035 258 / 0.1);
+      outline-offset: -1px;
+      /*background: oklch(99% 0.007 82);*/
+      box-shadow: 0 24px 72px oklch(22% 0.035 258 / 0.13);
+    }
+
+    .feature-shot img {
+      width: 100%;
+      user-select: none;
     }
 
     .privacy {
@@ -399,12 +441,28 @@
         gap: 28px;
       }
 
-      .feature-row {
-        display: block;
+      .feature-groups {
+        max-width: 560px;
       }
 
-      dd::before {
-        content: "";
+      .feature-group,
+      .feature-group:nth-child(even) {
+        grid-template-columns: 1fr;
+        row-gap: 28px;
+      }
+
+      .feature-group:nth-child(even) .feature-copy,
+      .feature-group:nth-child(even) .feature-shot {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .feature-copy {
+        max-width: 100%;
+      }
+
+      .feature-copy h2 {
+        max-width: 13ch;
       }
     }
 
@@ -426,6 +484,14 @@
 
       .lede {
         font-size: 21px;
+      }
+
+      .feature-group {
+        row-gap: 22px;
+      }
+
+      .feature-copy p {
+        font-size: 16px;
       }
 
       .button {
@@ -499,57 +565,51 @@
     <section class="features">
       <div class="feature-groups">
         <div class="feature-group">
-          <h2 class="feature-kicker">Notes Workflow</h2>
-          <dl>
-            <div class="feature-row">
-              <dt>Markdown triggers</dt>
-              <dd>Type familiar shortcuts for titles, headings, checklists, monostyled text, block quotes, and CJK-friendly aliases.</dd>
-            </div>
-            <div class="feature-row">
-              <dt>Slash commands</dt>
-              <dd>Open formatting actions, table insertion, and AI chat from a keyboard-first command panel.</dd>
-            </div>
-            <div class="feature-row">
-              <dt>Inline toolbar</dt>
-              <dd>Apply common Apple Notes formatting near the current editing context.</dd>
-            </div>
-          </dl>
+          <div class="feature-copy">
+            <p class="feature-kicker">Markdown shortcuts</p>
+            <h2>Write Notes with familiar text triggers.</h2>
+            <p>Turn plain typing into Apple Notes formatting without leaving the keyboard.</p>
+            <ul class="feature-list">
+              <li>Titles, headings, checklists, monostyled text, and block quotes.</li>
+              <li>CJK-friendly aliases for punctuation that is easier to type.</li>
+              <li>Note-link helpers for connecting notes quickly.</li>
+            </ul>
+          </div>
+          <figure class="feature-shot">
+            <img src="site/screenshots/screenshot-5.png" alt="A Notomo note showing supported Markdown shortcuts inside Apple Notes.">
+          </figure>
         </div>
 
         <div class="feature-group">
-          <h2 class="feature-kicker">AI Context</h2>
-          <dl>
-            <div class="feature-row">
-              <dt>Note-aware chat</dt>
-              <dd>Use selected text, the current line, visible note text, full note content, and recovered inline images when available.</dd>
-            </div>
-            <div class="feature-row">
-              <dt>Local providers</dt>
-              <dd>Work with installed Codex or Gemini command line tools, with unavailable models hidden from the picker.</dd>
-            </div>
-            <div class="feature-row">
-              <dt>Chat history</dt>
-              <dd>Keep past AI conversations and retained note image attachments.</dd>
-            </div>
-          </dl>
+          <div class="feature-copy">
+            <p class="feature-kicker">Command layer</p>
+            <h2>Open formatting and AI actions in place.</h2>
+            <p>A slash menu and inline toolbar bring common actions near the note you are editing.</p>
+            <ul class="feature-list">
+              <li>Keyboard-first command menu for formatting, tables, and AI chat.</li>
+              <li>Inline toolbar for quick Apple Notes styling.</li>
+              <li>Menu bar access when you need Notomo outside the editor.</li>
+            </ul>
+          </div>
+          <figure class="feature-shot">
+            <img src="site/screenshots/screenshot-3.png" alt="The Notomo slash command menu open on top of an Apple Notes document.">
+          </figure>
         </div>
 
         <div class="feature-group">
-          <h2 class="feature-kicker">Mac Native</h2>
-          <dl>
-            <div class="feature-row">
-              <dt>Menu bar access</dt>
-              <dd>Quick open from the menu bar or keyboard-focused Apple Notes workflows.</dd>
-            </div>
-            <div class="feature-row">
-              <dt>Settings</dt>
-              <dd>Control launch at login, menu bar visibility, appearance, language, feature preferences, permissions, and AI providers.</dd>
-            </div>
-            <div class="feature-row">
-              <dt>Sparkle updates</dt>
-              <dd>Online update support through the public appcast feed.</dd>
-            </div>
-          </dl>
+          <div class="feature-copy">
+            <p class="feature-kicker">Note-aware AI</p>
+            <h2>Ask with the current note already in view.</h2>
+            <p>Use selected text, the current line, visible text, the full note, and recovered inline images when they are available.</p>
+            <ul class="feature-list">
+              <li>Works with installed Codex or Gemini command line tools.</li>
+              <li>Keeps unavailable models out of the picker.</li>
+              <li>Saves chat history with retained note image attachments.</li>
+            </ul>
+          </div>
+          <figure class="feature-shot">
+            <img src="site/screenshots/screenshot-6.png" alt="Notomo AI chat panel beside Apple Notes with the current note attached as context.">
+          </figure>
         </div>
       </div>
     </section>
@@ -564,10 +624,10 @@
 
   <footer>
     <div class="shell">
-      <span>&copy; 2026 Notomo</span>
+      <span>&copy; 2026 Cosmos Studio</span>
       <nav aria-label="Footer">
         <a href="changelog.html">Changelog</a>
-        <a href="appcast.xml">Updates</a>
+        <!--<a href="appcast.xml">Updates</a>-->
       </nav>
     </div>
   </footer>
