@@ -10,12 +10,11 @@
   <meta property="og:image" content="site/screenshots/screenshot-1.png">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="site/notomo-icon.png" type="image/svg+xml">
+  <link rel="icon" href="site/notomo-icon.png" type="image/png">
   <link rel="preconnect" href="https://rsms.me" crossorigin>
   <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
   <style>
     :root {
-      /*--bg: oklch(98.6% 0.012 82);*/
       --surface: oklch(99.2% 0.008 82);
       --text: oklch(22% 0.035 258);
       --muted: oklch(50% 0.044 256);
@@ -25,7 +24,7 @@
       --button-text: oklch(98% 0.01 82);
       font-family: Inter Variable,Inter,sans-serif;
       font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-      background: var(--bg);
+      background: #ffffff;
       color: var(--text);
     }
 
@@ -40,11 +39,7 @@
     body {
       margin: 0;
       min-width: 320px;
-      background:
-        radial-gradient(ellipse at 50% 43rem, oklch(75% 0.11 63 / 0.12), transparent 38rem),
-        linear-gradient(180deg, oklch(99.4% 0.009 82) 0%, var(--bg) 58%, oklch(97.3% 0.018 82) 100%);
-      background-size: auto, auto;
-      background-position: center top, center top;
+      background: #ffffff;
       color: var(--text);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
@@ -576,7 +571,7 @@
             </ul>
           </div>
           <figure class="feature-shot">
-            <img src="site/screenshots/screenshot-5.png" alt="A Notomo note showing supported Markdown shortcuts inside Apple Notes.">
+            <img src="site/screenshots/screenshot-5.png" alt="A Notomo note showing supported Markdown shortcuts inside Apple Notes." loading="lazy" decoding="async">
           </figure>
         </div>
 
@@ -592,7 +587,7 @@
             </ul>
           </div>
           <figure class="feature-shot">
-            <img src="site/screenshots/screenshot-3.png" alt="The Notomo slash command menu open on top of an Apple Notes document.">
+            <img src="site/screenshots/screenshot-3.png" alt="The Notomo slash command menu open on top of an Apple Notes document." loading="lazy" decoding="async">
           </figure>
         </div>
 
@@ -608,7 +603,7 @@
             </ul>
           </div>
           <figure class="feature-shot">
-            <img src="site/screenshots/screenshot-6.png" alt="Notomo AI chat panel beside Apple Notes with the current note attached as context.">
+            <img src="site/screenshots/screenshot-6.png" alt="Notomo AI chat panel beside Apple Notes with the current note attached as context." loading="lazy" decoding="async">
           </figure>
         </div>
       </div>
