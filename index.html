@@ -1,14 +1,630 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" style="color-scheme: light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Notomo</title>
+  <title>Notomo: A companion for Apple Notes</title>
+  <meta name="description" content="Notomo brings Markdown-style shortcuts, slash commands, and note-aware AI chat to Apple Notes.">
+  <meta property="og:title" content="Notomo - A companion for Apple Notes">
+  <meta property="og:description" content="Bring Markdown shortcuts, slash commands, and note-aware AI chat to Apple Notes.">
+  <meta property="og:image" content="site/screenshots/screenshot-1.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="site/notomo-icon.png" type="image/png">
+  <link rel="preconnect" href="https://rsms.me" crossorigin>
+  <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
+  <style>
+    :root {
+      --surface: oklch(99.2% 0.008 82);
+      --text: oklch(22% 0.035 258);
+      --muted: oklch(50% 0.044 256);
+      --quiet: oklch(68% 0.038 256);
+      --line: oklch(90.5% 0.018 82);
+      --button: oklch(22% 0.035 258);
+      --button-text: oklch(98% 0.01 82);
+      font-family: Inter Variable,Inter,sans-serif;
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: #ffffff;
+      color: var(--text);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .shell {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 36px;
+    }
+
+    .nav {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      font-size: 14px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text);
+      font-weight: 500;
+      transition: opacity 160ms ease;
+    }
+
+    .brand:hover {
+      opacity: 0.8;
+    }
+
+    .brand img {
+      width: 24px;
+      height: 24px;
+      padding: 3px;
+      border-radius: 6px;
+      background: oklch(99.3% 0.008 82);
+      box-shadow: inset 0 0 0 1px oklch(22% 0.035 258 / 0.08), 0 8px 20px oklch(22% 0.035 258 / 0.08);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: #64748b;
+    }
+
+    .nav-links a {
+      transition: color 160ms ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      position: relative;
+      padding: clamp(60px, 10vh, 108px) 0 24px;
+      text-align: left;
+    }
+
+    .hero::before {
+      content: "";
+      position: fixed;
+      left: 50%;
+      top: -22%;
+      z-index: -1;
+      width: min(1600px, 140vw);
+      height: 620px;
+      transform: translateX(-50%);
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 45% 50%, oklch(85% 0.035 82 / 0.18), transparent 30%),
+        radial-gradient(ellipse at 54% 46%, oklch(62% 0.032 256 / 0.08), transparent 28%);
+      filter: blur(48px);
+    }
+
+    .app-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 0 38px;
+      border-radius: 18px;
+      box-shadow: 0 14px 36px oklch(22% 0.035 258 / 0.1);
+    }
+
+    h1 {
+      max-width: 30ch;
+      margin: 0;
+      color: var(--text);
+      font-size: clamp(28px, 4.4vw, 32px);
+      font-weight: 520;
+      line-height: 1.14;
+      /*text-wrap: balance;*/
+    }
+
+    .lede {
+      max-width: 45ch;
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: 22px;
+      font-weight: 520;
+      line-height: 1.20;
+      /*text-wrap: balance;*/
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 22px;
+      border-radius: 9px;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1;
+      transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+    }
+
+    .button.primary {
+      color: var(--button-text);
+      background: var(--button);
+    }
+
+    .button.primary:hover {
+      background: oklch(28% 0.04 258);
+      transform: translateY(-1px);
+    }
+
+    .button.secondary {
+      color: var(--muted);
+      background: transparent;
+    }
+
+    .button.secondary:hover {
+      color: var(--text);
+    }
+
+    .version {
+      margin: 8px 0 0;
+      color: var(--quiet);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .screenshot {
+      position: relative;
+      padding: 30px 0 30px;
+    }
+
+    .screenshot::before {
+      content: "";
+      position: absolute;
+      inset: -74px 0 0;
+      pointer-events: none;
+      background-image: radial-gradient(circle at center, oklch(83% 0.07 66 / 0.22) 0 1px, transparent 1.2px);
+      background-position: center top;
+      background-size: 18px 18px;
+      mask-image: linear-gradient(180deg, transparent 0%, black 22%, black 78%, transparent 100%);
+    }
+
+    .screenshot-frame {
+      position: relative;
+      z-index: 1;
+      max-width: 1128px;
+      margin: 0 auto;
+      padding: 0 88px;
+    }
+
+    .screenshot-frame img {
+      width: 100%;
+      border-radius: 12px;
+      outline: 1px solid oklch(22% 0.035 258 / 0.12);
+      outline-offset: -1px;
+      box-shadow: 0 34px 100px oklch(22% 0.035 258 / 0.16);
+      user-select: none;
+    }
+
+    .summary {
+      padding: 26px 0 66px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 34px;
+    }
+
+    .summary-item h2 {
+      margin: 0;
+      color: var(--text);
+      font-size: 17px;
+      font-weight: 620;
+      line-height: 1.4;
+    }
+
+    .summary-item p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .features {
+      padding: 26px 0 76px;
+    }
+
+    .feature-groups {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .feature-group {
+      display: grid;
+      grid-template-columns: minmax(260px, 500px) minmax(360px, 680px);
+      align-items: center;
+      justify-content: space-between;
+      column-gap: clamp(34px, 5vw, 68px);
+    }
+
+    .feature-group + .feature-group {
+      margin-top: clamp(78px, 9vw, 120px);
+    }
+
+    .feature-group:nth-child(even) {
+      grid-template-columns: minmax(360px, 680px) minmax(260px, 500px);
+    }
+
+    .feature-group:nth-child(even) .feature-copy {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .feature-group:nth-child(even) .feature-shot {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .feature-copy {
+      max-width: 500px;
+    }
+
+    .feature-kicker {
+      margin: 0 0 12px;
+      color: var(--quiet);
+      font-size: 13px;
+      font-weight: 650;
+      line-height: 1;
+    }
+
+    .feature-copy h2 {
+      /*max-width: 13ch;*/
+      margin: 0;
+      color: var(--text);
+      font-size: 18px;
+      font-weight: 650;
+      line-height: 1.06;
+      letter-spacing: 0;
+    }
+
+    .feature-copy p {
+      max-width: 60ch;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.55;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 8px;
+      padding-left: 1.15em;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .feature-list li::marker {
+      color: oklch(63% 0.11 75);
+    }
+
+    .feature-shot {
+      width: 100%;
+      margin: 0;
+      overflow: hidden;
+      border-radius: 14px;
+      outline: 1px solid oklch(22% 0.035 258 / 0.1);
+      outline-offset: -1px;
+      /*background: oklch(99% 0.007 82);*/
+      box-shadow: 0 24px 72px oklch(22% 0.035 258 / 0.13);
+    }
+
+    .feature-shot img {
+      width: 100%;
+      user-select: none;
+    }
+
+    .privacy {
+      padding: 0 0 72px;
+    }
+
+    .privacy .shell {
+      max-width: 768px;
+    }
+
+    .privacy h2 {
+      margin: 0;
+      color: var(--text);
+      font-size: 20px;
+      font-weight: 650;
+      line-height: 1.4;
+    }
+
+    .privacy p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 0 48px;
+      color: var(--quiet);
+      font-size: 14px;
+    }
+
+    footer .shell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    footer nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    footer a {
+      transition: color 160ms ease;
+    }
+
+    footer a:hover {
+      color: var(--text);
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        padding-top: 58px;
+      }
+
+      .app-icon {
+        width: 58px;
+        height: 58px;
+        margin-bottom: 30px;
+      }
+
+      h1 {
+        max-width: 15ch;
+      }
+
+      .lede {
+        max-width: 24ch;
+      }
+
+      .summary-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .feature-groups {
+        max-width: 560px;
+      }
+
+      .feature-group,
+      .feature-group:nth-child(even) {
+        grid-template-columns: 1fr;
+        row-gap: 28px;
+      }
+
+      .feature-group:nth-child(even) .feature-copy,
+      .feature-group:nth-child(even) .feature-shot {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .feature-copy {
+        max-width: 100%;
+      }
+
+      .feature-copy h2 {
+        max-width: 13ch;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .shell,
+      .screenshot-frame,
+      .feature-groups {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .lede {
+        font-size: 21px;
+      }
+
+      .feature-group {
+        row-gap: 22px;
+      }
+
+      .feature-copy p {
+        font-size: 16px;
+      }
+
+      .button {
+        min-height: 46px;
+        font-size: 15px;
+      }
+
+      .actions {
+        gap: 12px;
+      }
+
+      footer .shell {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      footer nav {
+        gap: 18px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!--<header class="shell nav" aria-label="Primary">
+    <a class="brand" href="./" aria-label="Notomo home">
+      <img src="site/notomo-icon.png" alt="">
+      <span>Notomo</span>
+    </a>
+    <nav class="nav-links" aria-label="Navigation">
+      <a href="changelog.html">Changelog</a>
+      <a href="Notomo.dmg">Download</a>
+    </nav>
+  </header>-->
+
   <main>
-    <h1>Notomo</h1>
-    <p>Website coming soon.</p>
+    <section class="hero">
+      <div class="shell">
+        <img class="app-icon" src="site/notomo-icon.png" alt="">
+        <h1>Notomo brings Markdown shortcuts and AI assistant to Apple Notes.</h1>
+        <p class="lede">Use slash commands and note-aware AI beside the note you are already editing.</p>
+        <div class="actions">
+          <a class="button primary" href="Notomo.dmg">Download for macOS</a>
+        </div>
+        <p class="version">v0.3.0 &middot; Requires macOS 15 or newer</p>
+      </div>
+    </section>
+
+    <section class="screenshot" aria-label="Notomo screenshot">
+      <div class="screenshot-frame">
+        <img src="site/screenshots/screenshot-1.png" alt="Notomo running beside Apple Notes with an assistant panel.">
+      </div>
+    </section>
+
+    <section class="summary" aria-label="What Notomo does">
+      <div class="shell summary-grid">
+        <article class="summary-item">
+          <h2>Works beside Apple Notes</h2>
+          <p>Notomo appears when Notes is active and stays out of the way when it is not.</p>
+        </article>
+        <article class="summary-item">
+          <h2>Turns typing into commands</h2>
+          <p>Use Markdown triggers for headings, checklists, code-style text, quotes, and note-link helpers.</p>
+        </article>
+        <article class="summary-item">
+          <h2>Adds local AI workflows</h2>
+          <p>Ask an assistant to use selected text, the current line, visible note text, or the full note as context.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature-groups">
+        <div class="feature-group">
+          <div class="feature-copy">
+            <p class="feature-kicker">Markdown shortcuts</p>
+            <h2>Write Notes with familiar text triggers.</h2>
+            <p>Turn plain typing into Apple Notes formatting without leaving the keyboard.</p>
+            <ul class="feature-list">
+              <li>Titles, headings, checklists, monostyled text, and block quotes.</li>
+              <li>CJK-friendly aliases for punctuation that is easier to type.</li>
+              <li>Note-link helpers for connecting notes quickly.</li>
+            </ul>
+          </div>
+          <figure class="feature-shot">
+            <img src="site/screenshots/screenshot-5.png" alt="A Notomo note showing supported Markdown shortcuts inside Apple Notes." loading="lazy" decoding="async">
+          </figure>
+        </div>
+
+        <div class="feature-group">
+          <div class="feature-copy">
+            <p class="feature-kicker">Command layer</p>
+            <h2>Open formatting and AI actions in place.</h2>
+            <p>A slash menu and inline toolbar bring common actions near the note you are editing.</p>
+            <ul class="feature-list">
+              <li>Keyboard-first command menu for formatting, tables, and AI chat.</li>
+              <li>Inline toolbar for quick Apple Notes styling.</li>
+              <li>Menu bar access when you need Notomo outside the editor.</li>
+            </ul>
+          </div>
+          <figure class="feature-shot">
+            <img src="site/screenshots/screenshot-3.png" alt="The Notomo slash command menu open on top of an Apple Notes document." loading="lazy" decoding="async">
+          </figure>
+        </div>
+
+        <div class="feature-group">
+          <div class="feature-copy">
+            <p class="feature-kicker">Note-aware AI</p>
+            <h2>Ask with the current note already in view.</h2>
+            <p>Use selected text, the current line, visible text, the full note, and recovered inline images when they are available.</p>
+            <ul class="feature-list">
+              <li>Works with installed Codex or Gemini command line tools.</li>
+              <li>Keeps unavailable models out of the picker.</li>
+              <li>Saves chat history with retained note image attachments.</li>
+            </ul>
+          </div>
+          <figure class="feature-shot">
+            <img src="site/screenshots/screenshot-6.png" alt="Notomo AI chat panel beside Apple Notes with the current note attached as context." loading="lazy" decoding="async">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="privacy">
+      <div class="shell">
+        <h2>Your notes stay in Apple Notes.</h2>
+        <p>Notomo observes and assists from the outside. It does not replace Apple Notes or store notes in its own database.</p>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="shell">
+      <span>&copy; 2026 Cosmos Studio</span>
+      <nav aria-label="Footer">
+        <a href="changelog.html">Changelog</a>
+        <!--<a href="appcast.xml">Updates</a>-->
+      </nav>
+    </div>
+  </footer>
 </body>
 </html>
