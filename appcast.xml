@@ -4,11 +4,11 @@
         <title>Notomo</title>
         <item>
             <title>0.3.0</title>
-            <pubDate>Wed, 20 May 2026 11:20:17 +0800</pubDate>
-            <sparkle:version>12</sparkle:version>
+            <pubDate>Wed, 20 May 2026 12:06:48 +0800</pubDate>
+            <sparkle:version>13</sparkle:version>
             <sparkle:shortVersionString>0.3.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://natsustan.github.io/notomo-app/Notomo.zip" length="11683846" type="application/octet-stream" sparkle:edSignature="VlZ32RqsvdA59lE+DSe869FFfscm0TDqpFhIu5WLjP30Zyev9d02O9wlbLTQxpjIdfxGQbLYpBoXq/RK6YvyAg=="/>
+            <enclosure url="https://natsustan.github.io/notomo-app/Notomo.zip" length="11683822" type="application/octet-stream" sparkle:edSignature="Q3XrNExaKJcQydhleU6143ltq9dSJ7dA8gOcVodRdCYtxLffWgz4tLVmMZ+jsIxcHH0oXgFY9wJ1zchzsr83Aw=="/>
         </item>
     </channel>
 </rss>
