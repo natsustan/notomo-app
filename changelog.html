@@ -115,10 +115,11 @@
       box-shadow: 0 18px 60px rgba(15, 23, 42, 0.08);
     }
 
+    .release + .release {
+      margin-top: 18px;
+    }
+
     .release header {
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
       margin-bottom: 16px;
     }
 
@@ -129,13 +130,6 @@
       font-size: 18px;
       font-weight: 500;
       line-height: 1.2;
-    }
-
-    time {
-      margin-left: auto;
-      color: #94a3b8;
-      font-size: 14px;
-      white-space: nowrap;
     }
 
     ul {
@@ -173,22 +167,6 @@
       color: #94a3b8;
       font-size: 14px;
     }
-
-    @media (max-width: 520px) {
-      .shell {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-
-      .release header {
-        display: block;
-      }
-
-      time {
-        display: block;
-        margin: 8px 0 0;
-      }
-    }
   </style>
 </head>
 <body>
@@ -205,19 +183,83 @@
 
   <main class="shell">
     <h1>Changelog</h1>
-    <p class="intro">Release notes for Notomo. This page is ready for future entries as new builds ship.</p>
+    <p class="intro">Release notes for Notomo.</p>
 
-    <article class="release" id="v0.3.0">
-      <header>
-        <h2>v0.3.0</h2>
-        <time datetime="2026-05-20">May 20, 2026</time>
-      </header>
-      <ul>
-        <li>Initial public website release.</li>
-        <li>Download link points to the macOS DMG package.</li>
-        <li>Sparkle update feed remains available at appcast.xml.</li>
-      </ul>
-    </article>
+<article class="release" id="v0.4.1">
+  <header>
+    <h2>v0.4.1</h2>
+  </header>
+  <ul>
+        <li>Added custom AI instructions, so you can tell Notomo how you want chat replies and inline edits to be shaped.</li>
+        <li>Improved inline AI results so replacement text streams in more reliably and stays focused on the selected text.</li>
+        <li>Refined AI settings, including clearer provider controls, memory options, and chat history handling.</li>
+        <li>Improved Codex and Gemini command detection for Macs using Node through nvm, fnm, Volta, asdf, Bun, npm-global, or mise.</li>
+        <li>Made Notomo prefer newer version-managed Node installs when several are available.</li>
+  </ul>
+</article>
+
+<article class="release" id="v0.4.0">
+  <header>
+    <h2>v0.4.0</h2>
+  </header>
+  <ul>
+        <li>Added inline AI, so you can select text in Apple Notes and ask Notomo to improve, rewrite, summarize, or respond with your own prompt.</li>
+        <li>Added customizable actions to the inline toolbar, with clearer icons for common writing and formatting tasks.</li>
+        <li>Added quick list commands for Apple Notes, including bulleted lists, numbered lists, and checklists.</li>
+        <li>Improved the AI assistant panel with calmer colors and a more polished reading experience.</li>
+        <li>Made note context handling more reliable, so Notomo keeps note titles intact while refreshing lightweight AI context.</li>
+        <li>Improved Apple Notes focus handling, especially around Markdown shortcuts and deleting trigger text.</li>
+        <li>Refined Quick Open visuals and handling while typing.</li>
+        <li>Simplified the menu bar experience so the most useful actions are easier to find.</li>
+  </ul>
+</article>
+
+<article class="release" id="v0.3.0">
+  <header>
+    <h2>v0.3.0</h2>
+  </header>
+  <ul>
+        <li>Improved AI note context refresh when opening the assistant panel.</li>
+        <li>Improved Quick Open behavior while using marked text or input method composition.</li>
+        <li>Made Quick Open ignore recently deleted notes.</li>
+        <li>Improved the Quick Open shortcut flow and visual details.</li>
+        <li>Added an accessibility permission prompt so first-time setup is clearer.</li>
+        <li>Improved note context mentions in the assistant picker.</li>
+        <li>Polished several small details across the assistant, Quick Open, and settings.</li>
+  </ul>
+</article>
+
+<article class="release" id="v0.2.0">
+  <header>
+    <h2>v0.2.0</h2>
+  </header>
+  <ul>
+        <li>Added Simplified Chinese localization and an app language setting.</li>
+        <li>Added Quick Open for finding and opening Apple Notes more quickly.</li>
+        <li>Added an inline formatting toolbar for selected text in Apple Notes.</li>
+        <li>Added rich text copy options in the AI assistant panel.</li>
+        <li>Improved AI conversations when working with images from your notes.</li>
+        <li>Added a skill mention picker and skill management for the AI assistant.</li>
+        <li>Refreshed the app icon, menu bar icon, slash command icons, and assistant visuals.</li>
+        <li>Improved chat behavior while replies are streaming, including pinned sent messages and clearer thinking states.</li>
+        <li>Made update settings easier to understand.</li>
+  </ul>
+</article>
+
+<article class="release" id="v0.1.0">
+  <header>
+    <h2>v0.1.0</h2>
+  </header>
+  <ul>
+        <li>Initial Notomo beta for writing faster in Apple Notes.</li>
+        <li>Added Markdown-style shortcuts for headings, lists, quotes, code blocks, dividers, and note links.</li>
+        <li>Added the floating command panel for inserting common Apple Notes formatting without leaving the keyboard.</li>
+        <li>Added the AI assistant panel with streaming replies, chat history, and note context.</li>
+        <li>Added AI provider settings so you can choose the assistant setup that works best for you.</li>
+        <li>Added note image handling so images from Apple Notes can be included when asking AI.</li>
+        <li>Added basic settings for app behavior, permissions, appearance, and chat history.</li>
+  </ul>
+</article>
   </main>
 
   <footer>
