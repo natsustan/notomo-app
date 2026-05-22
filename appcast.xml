@@ -3,62 +3,50 @@
   <channel>
     <title>Notomo</title>
     <item>
-      <title>0.4.0</title>
-      <pubDate>Fri, 22 May 2026 09:18:59 +0800</pubDate>
-      <sparkle:version>15</sparkle:version>
-      <sparkle:shortVersionString>0.4.0</sparkle:shortVersionString>
+      <title>0.4.1</title>
+      <pubDate>Fri, 22 May 2026 16:06:42 +0800</pubDate>
+      <sparkle:version>18</sparkle:version>
+      <sparkle:shortVersionString>0.4.1</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <enclosure url='https://natsustan.github.io/notomo-app/Notomo.zip' length='12058079' type='application/octet-stream' sparkle:edSignature='mQYqwd5NiHTbiWCWMVdLK5yZ6gYlpCSi92GPSvyne4IUKEFzEFTp7LMQo59ZidtvfO+cBYWoQWwtWUT1h0v7CA=='/>
+      <enclosure url='https://natsustan.github.io/notomo-app/Notomo.zip' length='12125180' type='application/octet-stream' sparkle:edSignature='kWANYXjM587HIK5GIZI4Ha6i/ne/a5cp9dCsqdryVRPhkJln50+N8WBdHzDVwDaQtrWGH7sloGzqjZpnqr0KBQ=='/>
       <description xml:lang='en' sparkle:format='markdown'>
-        <![CDATA[## What's new in Notomo 0.4.0
+        <![CDATA[## What's new in Notomo 0.4.1
 
-- Added inline AI, so you can select text in Apple Notes and ask Notomo to improve, rewrite, summarize, or respond with your own prompt.
-- Added customizable actions to the inline toolbar, with clearer icons for common writing and formatting tasks.
-- Added quick list commands for Apple Notes, including bulleted lists, numbered lists, and checklists.
-- Improved the AI assistant panel with calmer colors and a more polished reading experience.
-- Made note context handling more reliable, so Notomo keeps note titles intact while refreshing lightweight AI context.
-- Improved Apple Notes focus handling, especially around Markdown shortcuts and deleting trigger text.
-- Refined Quick Open visuals and handling while typing.
-- Simplified the menu bar experience so the most useful actions are easier to find.
+- Added custom AI instructions, so you can tell Notomo how you want chat replies and inline edits to be shaped.
+- Improved inline AI results so replacement text streams in more reliably and stays focused on the selected text.
+- Refined AI settings, including clearer provider controls, memory options, and chat history handling.
+- Improved Codex and Gemini command detection for Macs using Node through nvm, fnm, Volta, asdf, Bun, npm-global, or mise.
+- Made Notomo prefer newer version-managed Node installs when several are available.
 ]]>
       </description>
       <description xml:lang='ja' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.0 の新機能
+        <![CDATA[## Notomo 0.4.1 の新機能
 
-- インライン AI を追加しました。Apple Notes で選択した文章を、その場で改善、書き換え、要約したり、自分の指示で依頼したりできます。
-- インラインツールバーでアクションをカスタマイズできるようになり、よく使う文章作成や書式設定の操作がわかりやすいアイコンで使いやすくなりました。
-- 箇条書き、番号付きリスト、チェックリストをすばやく挿入できるリスト用のショートカットコマンドを追加しました。
-- AI アシスタントパネルの配色と読みやすさを改善しました。
-- ノートの内容を AI 用に更新するとき、ノートタイトルがより安定して保たれるようになりました。
-- Apple Notes でのフォーカス処理を改善し、Markdown ショートカットの実行や入力したトリガー文字の削除がより安定しました。
-- Quick Open の見た目と入力中の動作を改善しました。
-- メニューバーを整理し、よく使う操作を見つけやすくしました。
+- カスタム AI 指示を追加しました。チャットの返答やインライン編集を、自分の好みに合わせて調整できます。
+- インライン AI の結果表示を改善し、選択したテキストに集中した置き換え案がより安定して表示されるようになりました。
+- AI 設定を見直し、プロバイダー、メモリ、チャット履歴の設定がわかりやすくなりました。
+- nvm、fnm、Volta、asdf、Bun、npm-global、mise で Node を管理している Mac でも、Codex と Gemini のコマンドを見つけやすくしました。
+- 複数の Node が入っている場合は、より新しいバージョン管理済みの Node を優先するようになりました。
 ]]>
       </description>
       <description xml:lang='zh-Hans' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.0 更新内容
+        <![CDATA[## Notomo 0.4.1 更新内容
 
-- 新增内联 AI：在 Apple Notes 里选中文字后，可以直接让 Notomo 帮你润色、改写、总结，或输入自己的要求。
-- 内联工具栏现在支持自定义动作，并换用了更清楚的图标，常用写作和格式操作更顺手。
-- 新增列表快捷命令，可以快速插入项目列表、编号列表和待办清单。
-- 优化了 AI 助手面板的配色和阅读体验，看起来更清爽。
-- 改进了笔记上下文处理，Notomo 刷新 AI 相关内容时会更好地保留笔记标题。
-- 改进 Apple Notes 里的焦点处理，Markdown 快捷触发和删除触发文字时更稳定。
-- 优化 Quick Open 的视觉效果和输入时的表现。
-- 简化菜单栏体验，把常用操作整理得更容易找到。
+- 新增自定义 AI 指令：可以告诉 Notomo 你希望聊天回复和内联改写采用什么风格。
+- 改进内联 AI 结果显示，替换文本会更稳定地流式出现，并更专注于你选中的内容。
+- 优化 AI 设置页，模型来源、记忆长度和聊天历史相关设置更清楚。
+- 改进 Codex 和 Gemini 命令检测：使用 nvm、fnm、Volta、asdf、Bun、npm-global 或 mise 管理 Node 的 Mac 也更容易被正确识别。
+- 当本机存在多个版本管理的 Node 时，Notomo 会优先使用更新的版本。
 ]]>
       </description>
       <description xml:lang='zh-Hant' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.0 更新內容
+        <![CDATA[## Notomo 0.4.1 更新內容
 
-- 新增內嵌 AI：在 Apple Notes 裡選取文字後，可以直接讓 Notomo 幫你潤飾、改寫、摘要，或輸入自己的要求。
-- 內嵌工具列現在支援自訂動作，並換用了更清楚的圖示，常用寫作和格式操作更順手。
-- 新增清單快捷命令，可以快速插入項目清單、編號清單和待辦清單。
-- 優化了 AI 助手面板的配色和閱讀體驗，看起來更清爽。
-- 改進了筆記上下文處理，Notomo 重新整理 AI 相關內容時會更好地保留筆記標題。
-- 改進 Apple Notes 裡的焦點處理，Markdown 快捷觸發和刪除觸發文字時更穩定。
-- 優化 Quick Open 的視覺效果和輸入時的表現。
-- 簡化選單列體驗，把常用操作整理得更容易找到。
+- 新增自訂 AI 指令：可以告訴 Notomo 你希望聊天回覆和內嵌改寫採用什麼風格。
+- 改進內嵌 AI 結果顯示，替換文字會更穩定地串流出現，並更專注於你選取的內容。
+- 優化 AI 設定頁，模型來源、記憶長度和聊天記錄相關設定更清楚。
+- 改進 Codex 和 Gemini 指令偵測：使用 nvm、fnm、Volta、asdf、Bun、npm-global 或 mise 管理 Node 的 Mac 也更容易被正確識別。
+- 當本機存在多個版本管理的 Node 時，Notomo 會優先使用較新的版本。
 ]]>
       </description>
     </item>
