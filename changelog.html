@@ -14,7 +14,7 @@
       --text: #334155;
       --muted: #64748b;
       --line: #e2e8f0;
-      --white: #0f172a;
+      --heading: #0f172a;
       font-family: InterVariable, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-feature-settings: "cv02", "cv03", "cv04", "cv11";
       background:
@@ -61,7 +61,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      color: var(--white);
+      color: var(--heading);
       font-weight: 500;
     }
 
@@ -91,7 +91,7 @@
 
     h1 {
       margin: 0;
-      color: var(--white);
+      color: var(--heading);
       font-size: clamp(36px, 6vw, 48px);
       font-weight: 500;
       line-height: 1.08;
@@ -185,24 +185,37 @@
     <h1>Changelog</h1>
     <p class="intro">Release notes for Notomo.</p>
 
-<article class="release" id="v0.4.1">
-  <header>
-    <h2>v0.4.1</h2>
-  </header>
-  <ul>
+    <article class="release" id="v0.4.2">
+      <header>
+        <h2>v0.4.2</h2>
+      </header>
+      <ul>
+        <li>Added optional Vim-style navigation for Quick Open, so you can move through results, open a note, or close the panel with Control-H/J/K/L.</li>
+        <li>Improved Skills sync from Apple Notes, with faster refreshes, shared Notes database access, clearer folder status, and better retry behavior after refresh errors.</li>
+        <li>Preserved more formatting when reading Skills from Apple Notes, including Markdown, ordered lists, underscores, and short Chinese/Japanese/Korean instruction lines.</li>
+        <li>Refined Settings with clearer sections, improved help text, updated icons, and fewer unavailable controls.</li>
+        <li>Improved translations and wording across the assistant panel, Quick Open, slash commands, formatting actions, and appearance settings.</li>
+      </ul>
+    </article>
+
+    <article class="release" id="v0.4.1">
+      <header>
+        <h2>v0.4.1</h2>
+      </header>
+      <ul>
         <li>Added custom AI instructions, so you can tell Notomo how you want chat replies and inline edits to be shaped.</li>
         <li>Improved inline AI results so replacement text streams in more reliably and stays focused on the selected text.</li>
         <li>Refined AI settings, including clearer provider controls, memory options, and chat history handling.</li>
         <li>Improved Codex and Gemini command detection for Macs using Node through nvm, fnm, Volta, asdf, Bun, npm-global, or mise.</li>
         <li>Made Notomo prefer newer version-managed Node installs when several are available.</li>
-  </ul>
-</article>
+      </ul>
+    </article>
 
-<article class="release" id="v0.4.0">
-  <header>
-    <h2>v0.4.0</h2>
-  </header>
-  <ul>
+    <article class="release" id="v0.4.0">
+      <header>
+        <h2>v0.4.0</h2>
+      </header>
+      <ul>
         <li>Added inline AI, so you can select text in Apple Notes and ask Notomo to improve, rewrite, summarize, or respond with your own prompt.</li>
         <li>Added customizable actions to the inline toolbar, with clearer icons for common writing and formatting tasks.</li>
         <li>Added quick list commands for Apple Notes, including bulleted lists, numbered lists, and checklists.</li>
@@ -211,14 +224,14 @@
         <li>Improved Apple Notes focus handling, especially around Markdown shortcuts and deleting trigger text.</li>
         <li>Refined Quick Open visuals and handling while typing.</li>
         <li>Simplified the menu bar experience so the most useful actions are easier to find.</li>
-  </ul>
-</article>
+      </ul>
+    </article>
 
-<article class="release" id="v0.3.0">
-  <header>
-    <h2>v0.3.0</h2>
-  </header>
-  <ul>
+    <article class="release" id="v0.3.0">
+      <header>
+        <h2>v0.3.0</h2>
+      </header>
+      <ul>
         <li>Improved AI note context refresh when opening the assistant panel.</li>
         <li>Improved Quick Open behavior while using marked text or input method composition.</li>
         <li>Made Quick Open ignore recently deleted notes.</li>
@@ -226,14 +239,14 @@
         <li>Added an accessibility permission prompt so first-time setup is clearer.</li>
         <li>Improved note context mentions in the assistant picker.</li>
         <li>Polished several small details across the assistant, Quick Open, and settings.</li>
-  </ul>
-</article>
+      </ul>
+    </article>
 
-<article class="release" id="v0.2.0">
-  <header>
-    <h2>v0.2.0</h2>
-  </header>
-  <ul>
+    <article class="release" id="v0.2.0">
+      <header>
+        <h2>v0.2.0</h2>
+      </header>
+      <ul>
         <li>Added Simplified Chinese localization and an app language setting.</li>
         <li>Added Quick Open for finding and opening Apple Notes more quickly.</li>
         <li>Added an inline formatting toolbar for selected text in Apple Notes.</li>
@@ -243,14 +256,14 @@
         <li>Refreshed the app icon, menu bar icon, slash command icons, and assistant visuals.</li>
         <li>Improved chat behavior while replies are streaming, including pinned sent messages and clearer thinking states.</li>
         <li>Made update settings easier to understand.</li>
-  </ul>
-</article>
+      </ul>
+    </article>
 
-<article class="release" id="v0.1.0">
-  <header>
-    <h2>v0.1.0</h2>
-  </header>
-  <ul>
+    <article class="release" id="v0.1.0">
+      <header>
+        <h2>v0.1.0</h2>
+      </header>
+      <ul>
         <li>Initial Notomo beta for writing faster in Apple Notes.</li>
         <li>Added Markdown-style shortcuts for headings, lists, quotes, code blocks, dividers, and note links.</li>
         <li>Added the floating command panel for inserting common Apple Notes formatting without leaving the keyboard.</li>
@@ -258,8 +271,8 @@
         <li>Added AI provider settings so you can choose the assistant setup that works best for you.</li>
         <li>Added note image handling so images from Apple Notes can be included when asking AI.</li>
         <li>Added basic settings for app behavior, permissions, appearance, and chat history.</li>
-  </ul>
-</article>
+      </ul>
+    </article>
   </main>
 
   <footer>
