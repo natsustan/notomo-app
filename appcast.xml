@@ -1,54 +1,14 @@
-<?xml version='1.0' standalone='yes'?>
-<rss xmlns:sparkle='http://www.andymatuschak.org/xml-namespaces/sparkle' version='2.0'>
-  <channel>
-    <title>Notomo</title>
-    <item>
-      <title>0.4.2</title>
-      <pubDate>Mon, 25 May 2026 10:10:08 +0800</pubDate>
-      <sparkle:version>19</sparkle:version>
-      <sparkle:shortVersionString>0.4.2</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <enclosure url='https://natsustan.github.io/notomo-app/Notomo.zip' length='12255244' type='application/octet-stream' sparkle:edSignature='ssLs8P33sMXnrFXASX8AObXtCUZhOIqE88yRdrvTi5Ao9/LdrDB8QlEkF4kpzMRd+CHOpoEVqWzpwiFX9dS9AQ=='/>
-      <description xml:lang='en' sparkle:format='markdown'>
-        <![CDATA[## What's new in Notomo 0.4.2
-
-- Added optional Vim-style navigation for Quick Open, so you can move through results, open a note, or close the panel with Control-H/J/K/L.
-- Improved Skills sync from Apple Notes, with faster refreshes, shared Notes database access, clearer folder status, and better retry behavior after refresh errors.
-- Preserved more formatting when reading Skills from Apple Notes, including Markdown, ordered lists, underscores, and short Chinese/Japanese/Korean instruction lines.
-- Refined Settings with clearer sections, improved help text, updated icons, and fewer unavailable controls.
-- Improved translations and wording across the assistant panel, Quick Open, slash commands, formatting actions, and appearance settings.
-]]>
-      </description>
-      <description xml:lang='ja' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.2 の新機能
-
-- Quick Open に任意で使える Vim 風の移動操作を追加しました。Control-H/J/K/L で結果の移動、ノートを開く操作、パネルの終了ができます。
-- Apple Notes からの Skills 同期を改善し、更新を速くし、Notes データベース権限を共有し、フォルダ状態や更新失敗後の再試行をわかりやすくしました。
-- Apple Notes から Skills を読み取るときに、Markdown、番号付きリスト、アンダースコア、短い中国語・日本語・韓国語の指示行など、より多くの書式を保つようにしました。
-- 設定画面を整理し、セクション、説明文、アイコンを見直し、現在使えない操作を表示しないようにしました。
-- アシスタントパネル、Quick Open、スラッシュコマンド、書式アクション、外観設定の翻訳と文言を改善しました。
-]]>
-      </description>
-      <description xml:lang='zh-Hans' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.2 更新内容
-
-- Quick Open 新增可选的 Vim 风格导航：可以用 Control-H/J/K/L 移动结果、打开备忘录或关闭面板。
-- 改进从 Apple Notes 同步 Skills 的体验：刷新更快，共用 Notes 数据库访问权限，文件夹状态更清楚，刷新出错后的重试也更稳定。
-- 从 Apple Notes 读取 Skills 时会保留更多格式，包括 Markdown、有序列表、下划线，以及较短的中文、日文、韩文指令行。
-- 优化设置页结构，分区、说明文字和图标更清楚，并隐藏当前不可用的控制项。
-- 改进助手面板、Quick Open、斜杠命令、格式化动作和外观设置中的翻译与文案。
-]]>
-      </description>
-      <description xml:lang='zh-Hant' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.2 更新內容
-
-- Quick Open 新增可選的 Vim 風格導覽：可以用 Control-H/J/K/L 移動結果、開啟備忘錄或關閉面板。
-- 改進從 Apple Notes 同步 Skills 的體驗：重新整理更快，共用 Notes 資料庫存取權限，資料夾狀態更清楚，重新整理出錯後的重試也更穩定。
-- 從 Apple Notes 讀取 Skills 時會保留更多格式，包括 Markdown、有序列表、底線，以及較短的中文、日文、韓文指令行。
-- 優化設定頁結構，分區、說明文字和圖示更清楚，並隱藏目前不可用的控制項。
-- 改進助手面板、Quick Open、斜線命令、格式化動作和外觀設定中的翻譯與文案。
-]]>
-      </description>
-    </item>
-  </channel>
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>Notomo</title>
+        <item>
+            <title>0.4.3</title>
+            <pubDate>Tue, 26 May 2026 16:28:32 +0800</pubDate>
+            <sparkle:version>21</sparkle:version>
+            <sparkle:shortVersionString>0.4.3</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://natsustan.github.io/notomo-app/Notomo.zip" length="12696040" type="application/octet-stream" sparkle:edSignature="oWEywPrG+donfuAjVfEVQGlfvVYbb6+/FRMbeHi5V/gpaVLDNFp4o8tZiVkdJp9o6eUYgo7g6zekZfI8QOzNBA=="/>
+        </item>
+    </channel>
 </rss>
