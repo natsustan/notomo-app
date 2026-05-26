@@ -1,14 +1,46 @@
-<?xml version="1.0" standalone="yes"?>
-<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
-    <channel>
-        <title>Notomo</title>
-        <item>
-            <title>0.4.3</title>
-            <pubDate>Tue, 26 May 2026 16:28:32 +0800</pubDate>
-            <sparkle:version>21</sparkle:version>
-            <sparkle:shortVersionString>0.4.3</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://natsustan.github.io/notomo-app/Notomo.zip" length="12696040" type="application/octet-stream" sparkle:edSignature="oWEywPrG+donfuAjVfEVQGlfvVYbb6+/FRMbeHi5V/gpaVLDNFp4o8tZiVkdJp9o6eUYgo7g6zekZfI8QOzNBA=="/>
-        </item>
-    </channel>
+<?xml version='1.0' standalone='yes'?>
+<rss xmlns:sparkle='http://www.andymatuschak.org/xml-namespaces/sparkle' version='2.0'>
+  <channel>
+    <title>Notomo</title>
+    <item>
+      <title>0.4.4</title>
+      <pubDate>Tue, 26 May 2026 22:38:38 +0800</pubDate>
+      <sparkle:version>23</sparkle:version>
+      <sparkle:shortVersionString>0.4.4</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <enclosure url='https://natsustan.github.io/notomo-app/Notomo.zip' length='12716579' type='application/octet-stream' sparkle:edSignature='+Fr8NUIWxaF+M9luLyyKL8eMmgWc11YKDrYtafdbOE4ACVzbRW+AZ5vhBw6FCKfjip3O3UynGTQQq+XcT1EoDA=='/>
+      <description xml:lang='en' sparkle:format='markdown'>
+        <![CDATA[## What's new in Notomo 0.4.4
+
+- Fixed inline formatting from the floating toolbar so the Apple Notes editor is refocused before applying the change.
+- Improved toolbar behavior after choosing an inline formatting action, reducing cases where focus stayed on Notomo instead of returning to the note.
+- Reset the Settings window's initial focus each time it opens, so keyboard focus no longer lands on a stale control from the previous visit.
+]]>
+      </description>
+      <description xml:lang='ja' sparkle:format='markdown'>
+        <![CDATA[## Notomo 0.4.4 の新機能
+
+- フローティングツールバーからインライン書式を適用するとき、変更前に Apple Notes の編集欄へフォーカスを戻すよう修正しました。
+- インライン書式アクションを選んだ後のツールバー動作を改善し、フォーカスが Notomo 側に残ることがある問題を減らしました。
+- 設定ウィンドウを開くたびに初期フォーカスをリセットするようにし、前回操作した項目にキーボードフォーカスが残らないようにしました。
+]]>
+      </description>
+      <description xml:lang='zh-Hans' sparkle:format='markdown'>
+        <![CDATA[## Notomo 0.4.4 更新内容
+
+- 修复从浮动工具栏使用内联格式时的焦点问题：应用格式前会先把焦点切回 Apple Notes 编辑区。
+- 改进选择内联格式操作后的工具栏行为，减少焦点停留在 Notomo 而没有回到当前笔记的情况。
+- 设置窗口每次打开时都会重置初始焦点，避免键盘焦点落在上一次停留的控件上。
+]]>
+      </description>
+      <description xml:lang='zh-Hant' sparkle:format='markdown'>
+        <![CDATA[## Notomo 0.4.4 更新內容
+
+- 修復從浮動工具列使用內嵌格式時的焦點問題：套用格式前會先把焦點切回 Apple Notes 編輯區。
+- 改進選擇內嵌格式操作後的工具列行為，減少焦點停留在 Notomo 而沒有回到目前筆記的情況。
+- 設定視窗每次開啟時都會重置初始焦點，避免鍵盤焦點落在上一次停留的控制項上。
+]]>
+      </description>
+    </item>
+  </channel>
 </rss>
