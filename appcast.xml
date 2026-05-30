@@ -3,50 +3,54 @@
   <channel>
     <title>Notomo</title>
     <item>
-      <title>0.4.5</title>
-      <pubDate>Wed, 27 May 2026 14:41:23 +0800</pubDate>
-      <sparkle:version>24</sparkle:version>
-      <sparkle:shortVersionString>0.4.5</sparkle:shortVersionString>
+      <title>0.4.6</title>
+      <pubDate>Sat, 30 May 2026 20:15:44 +0800</pubDate>
+      <sparkle:version>25</sparkle:version>
+      <sparkle:shortVersionString>0.4.6</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <enclosure url='https://natsustan.github.io/notomo-app/Notomo.zip' length='12933544' type='application/octet-stream' sparkle:edSignature='LDh7p1Lpe4T1qVvza1BhkB5HFsJa6ssef69YmuqMIkZme4Amh6m8Q+na9HOCR2J5edeBePzagYJT5JZqlsLdBg=='/>
+      <enclosure url='https://natsustan.github.io/notomo-app/Notomo.zip' length='13325266' type='application/octet-stream' sparkle:edSignature='rHpEgZxEoB4tsv0SAzM6xFAHSJCuovJ9Zv5QvSOppmembuCH/vreARox/VrFM6kZ8fOcaYGVQn7LVTBB+3rzCw=='/>
       <description xml:lang='en' sparkle:format='markdown'>
-        <![CDATA[## What's new in Notomo 0.4.5
+        <![CDATA[## What's new in Notomo 0.4.6
 
-- Added Templates support: create a top-level Apple Notes folder named "Templates" or "templates", add one note per template, then insert those templates from the slash command panel.
-- Added template variables for the current date and time, so reusable notes can automatically include today's date or the current time when inserted.
-- Added /date and /time slash commands for quickly inserting the current date or time into Apple Notes.
-- Added date and time format settings for both slash commands and template variables, with localized defaults for each app language.
-- Improved template and Skills syncing with cached results, clearer refresh state, and more reliable access to Apple Notes content.
+- Added a command palette for Apple Notes, with quick access to Quick Open, AI Assistant, Settings, and note export actions.
+- Added note export actions for copying the selected note as Markdown or plain text, copying its Apple Notes link, and saving it as Markdown or PDF.
+- Improved Apple Notes export parsing so copied and exported notes keep cleaner headings, lists, quotes, code blocks, and filenames.
+- Made Inline AI safer when applying results: Notomo now checks that Apple Notes is still focused before replacing or inserting text.
+- Improved Quick Open and Settings readability, including clearer loading states, section descriptions, sidebar icons, and a configurable command palette shortcut.
+- Made synced Skills available from a saved cache across app launches, so they remain visible even before Apple Notes finishes refreshing.
 ]]>
       </description>
       <description xml:lang='ja' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.5 の新機能
+        <![CDATA[## Notomo 0.4.6 の新機能
 
-- テンプレートに対応しました。Apple Notes に「Templates」または「templates」という最上位フォルダを作り、テンプレートごとにノートを1つ追加すると、スラッシュコマンドパネルから挿入できます。
-- テンプレート変数で現在の日付と時刻を入れられるようになりました。よく使うノートに、挿入時点の日付や時刻を自動で含められます。
-- /date と /time スラッシュコマンドを追加し、Apple Notes に現在の日付や時刻をすばやく挿入できるようにしました。
-- スラッシュコマンドとテンプレート変数それぞれに日付・時刻形式の設定を追加し、アプリの言語に合わせた既定値を使うようにしました。
-- テンプレートと Skills の同期を改善し、キャッシュ、更新状態の表示、Apple Notes 内容へのアクセスをより安定させました。
+- Apple Notes で使えるコマンドパレットを追加しました。Quick Open、AI アシスタント、設定、ノートの書き出し操作へすばやくアクセスできます。
+- 選択中のノートを書き出す操作を追加しました。Markdown またはプレーンテキストとしてコピー、Apple Notes リンクのコピー、Markdown / PDF ファイルとして保存ができます。
+- Apple Notes の書き出し解析を改善し、コピーや書き出し時に見出し、リスト、引用、コードブロック、ファイル名がよりきれいに保たれるようにしました。
+- Inline AI の結果を適用するときの安全性を改善しました。置き換えや挿入の前に、Apple Notes にフォーカスが残っていることを確認します。
+- Quick Open と設定画面の読みやすさを改善しました。読み込み状態、セクション説明、サイドバーアイコン、コマンドパレットのショートカット設定がよりわかりやすくなりました。
+- 同期済み Skills を保存済みキャッシュから使えるようにしました。アプリを再起動した直後でも、Apple Notes の更新完了を待たずに保存済み Skills を表示できます。
 ]]>
       </description>
       <description xml:lang='zh-Hans' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.5 更新内容
+        <![CDATA[## Notomo 0.4.6 更新内容
 
-- 新增模板支持：在 Apple Notes 中创建名为“Templates”或“templates”的顶层文件夹，每个模板添加一条备忘录，就可以从斜杠命令面板插入这些模板。
-- 新增模板变量，可在插入模板时自动填入当前日期或当前时间。
-- 新增 /date 和 /time 斜杠命令，可快速把当前日期或时间插入到 Apple Notes。
-- 为斜杠命令和模板变量分别新增日期、时间格式设置，并会根据应用语言使用更合适的默认格式。
-- 改进模板和 Skills 同步体验：加入缓存、刷新状态提示，并更稳定地读取 Apple Notes 内容。
+- 新增命令面板，可在 Apple Notes 中快速打开 Quick Open、AI 助手、设置，以及笔记导出相关操作。
+- 新增笔记导出操作：可将当前选中的笔记复制为 Markdown 或纯文本、复制 Apple Notes 链接，或保存为 Markdown / PDF 文件。
+- 改进 Apple Notes 导出解析，复制和导出的笔记会更好地保留标题、列表、引用、代码块和文件名。
+- 让 Inline AI 应用结果时更安全：替换或插入文字前，会确认焦点仍在 Apple Notes。
+- 改进 Quick Open 和设置界面的可读性，包括更清楚的加载状态、分区说明、侧边栏图标，以及可配置的命令面板快捷键。
+- Skills 同步结果现在会保存缓存，重启应用后也能先显示已保存的 Skills，再等待 Apple Notes 刷新完成。
 ]]>
       </description>
       <description xml:lang='zh-Hant' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.5 更新內容
+        <![CDATA[## Notomo 0.4.6 更新內容
 
-- 新增範本支援：在 Apple Notes 中建立名為「Templates」或「templates」的最上層資料夾，每個範本加入一則備忘錄，就可以從斜槓命令面板插入這些範本。
-- 新增範本變數，可在插入範本時自動填入目前日期或目前時間。
-- 新增 /date 和 /time 斜槓命令，可快速把目前日期或時間插入 Apple Notes。
-- 為斜槓命令和範本變數分別新增日期、時間格式設定，並會依照應用程式語言使用更合適的預設格式。
-- 改進範本和 Skills 同步體驗：加入快取、重新整理狀態提示，並更穩定地讀取 Apple Notes 內容。
+- 新增命令面板，可在 Apple Notes 中快速開啟 Quick Open、AI 助手、設定，以及筆記匯出相關操作。
+- 新增筆記匯出操作：可將目前選取的筆記複製為 Markdown 或純文字、複製 Apple Notes 連結，或儲存為 Markdown / PDF 檔案。
+- 改進 Apple Notes 匯出解析，複製和匯出的筆記會更好地保留標題、清單、引用、程式碼區塊和檔名。
+- 讓 Inline AI 套用結果時更安全：取代或插入文字前，會確認焦點仍在 Apple Notes。
+- 改進 Quick Open 和設定介面的可讀性，包括更清楚的載入狀態、分區說明、側邊欄圖示，以及可設定的命令面板快捷鍵。
+- Skills 同步結果現在會保存快取，重新啟動應用程式後也能先顯示已保存的 Skills，再等待 Apple Notes 重新整理完成。
 ]]>
       </description>
     </item>
