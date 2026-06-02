@@ -3,54 +3,58 @@
   <channel>
     <title>Notomo</title>
     <item>
-      <title>0.4.6</title>
-      <pubDate>Sat, 30 May 2026 20:15:44 +0800</pubDate>
-      <sparkle:version>25</sparkle:version>
-      <sparkle:shortVersionString>0.4.6</sparkle:shortVersionString>
+      <title>0.4.7</title>
+      <pubDate>Tue, 02 Jun 2026 21:39:15 +0800</pubDate>
+      <sparkle:version>26</sparkle:version>
+      <sparkle:shortVersionString>0.4.7</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <enclosure url='https://natsustan.github.io/notomo-app/Notomo.zip' length='13325266' type='application/octet-stream' sparkle:edSignature='rHpEgZxEoB4tsv0SAzM6xFAHSJCuovJ9Zv5QvSOppmembuCH/vreARox/VrFM6kZ8fOcaYGVQn7LVTBB+3rzCw=='/>
+      <enclosure url='https://natsustan.github.io/notomo-app/Notomo.zip' length='13541787' type='application/octet-stream' sparkle:edSignature='i4XpezpFsGZaEbwvAcsya1YawmsCXHmA7PqwtzeyqDG77fk0g+xjwMoYTW0eDmzIknLFLclNcDyGXV/hk0TmBA=='/>
       <description xml:lang='en' sparkle:format='markdown'>
-        <![CDATA[## What's new in Notomo 0.4.6
+        <![CDATA[## What's new in Notomo 0.4.7
 
-- Added a command palette for Apple Notes, with quick access to Quick Open, AI Assistant, Settings, and note export actions.
-- Added note export actions for copying the selected note as Markdown or plain text, copying its Apple Notes link, and saving it as Markdown or PDF.
-- Improved Apple Notes export parsing so copied and exported notes keep cleaner headings, lists, quotes, code blocks, and filenames.
-- Made Inline AI safer when applying results: Notomo now checks that Apple Notes is still focused before replacing or inserting text.
-- Improved Quick Open and Settings readability, including clearer loading states, section descriptions, sidebar icons, and a configurable command palette shortcut.
-- Made synced Skills available from a saved cache across app launches, so they remain visible even before Apple Notes finishes refreshing.
+- Added a global Skills Launcher for using your saved Skills on selected text outside Apple Notes.
+- Skills results can now replace the original selection or insert text below it when Notomo can safely return to the source app; Copy and Continue in chat remain available.
+- Improved launcher and inline toolbar placement so panels appear more reliably near the current text selection, including after mouse selections and double-clicks.
+- Made the Skills Launcher dismiss cleanly when clicking outside it.
+- Made Codex-based AI actions feel faster by reusing warm sessions and preparing Inline AI and assistant model choices earlier.
+- Improved background AI session cleanup and Gemini CLI handling for more stable headless runs.
+
 ]]>
       </description>
       <description xml:lang='ja' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.6 の新機能
+        <![CDATA[## Notomo 0.4.7 の新機能
 
-- Apple Notes で使えるコマンドパレットを追加しました。Quick Open、AI アシスタント、設定、ノートの書き出し操作へすばやくアクセスできます。
-- 選択中のノートを書き出す操作を追加しました。Markdown またはプレーンテキストとしてコピー、Apple Notes リンクのコピー、Markdown / PDF ファイルとして保存ができます。
-- Apple Notes の書き出し解析を改善し、コピーや書き出し時に見出し、リスト、引用、コードブロック、ファイル名がよりきれいに保たれるようにしました。
-- Inline AI の結果を適用するときの安全性を改善しました。置き換えや挿入の前に、Apple Notes にフォーカスが残っていることを確認します。
-- Quick Open と設定画面の読みやすさを改善しました。読み込み状態、セクション説明、サイドバーアイコン、コマンドパレットのショートカット設定がよりわかりやすくなりました。
-- 同期済み Skills を保存済みキャッシュから使えるようにしました。アプリを再起動した直後でも、Apple Notes の更新完了を待たずに保存済み Skills を表示できます。
+- Apple Notes 以外で選択したテキストに保存済み Skills を使える、グローバル Skills Launcher を追加しました。
+- Notomo が元のアプリへ安全に戻れる場合、Skills の結果で元の選択範囲を置き換えたり、その下に挿入したりできるようになりました。コピーとチャットで続ける操作も引き続き使えます。
+- Skills Launcher とインラインツールバーの表示位置を改善しました。マウス選択やダブルクリック選択のあとでも、現在のテキスト付近により安定して表示されます。
+- Skills Launcher の外側をクリックしたときに、パネルが自然に閉じるようになりました。
+- Codex を使う AI 操作がより速く感じられるよう、ウォーム済みセッションの再利用と、Inline AI やアシスタントのモデル選択の事前準備を改善しました。
+- バックグラウンドの AI セッション整理と Gemini CLI の扱いを改善し、ヘッドレス実行の安定性を高めました。
+
 ]]>
       </description>
       <description xml:lang='zh-Hans' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.6 更新内容
+        <![CDATA[## Notomo 0.4.7 更新内容
 
-- 新增命令面板，可在 Apple Notes 中快速打开 Quick Open、AI 助手、设置，以及笔记导出相关操作。
-- 新增笔记导出操作：可将当前选中的笔记复制为 Markdown 或纯文本、复制 Apple Notes 链接，或保存为 Markdown / PDF 文件。
-- 改进 Apple Notes 导出解析，复制和导出的笔记会更好地保留标题、列表、引用、代码块和文件名。
-- 让 Inline AI 应用结果时更安全：替换或插入文字前，会确认焦点仍在 Apple Notes。
-- 改进 Quick Open 和设置界面的可读性，包括更清楚的加载状态、分区说明、侧边栏图标，以及可配置的命令面板快捷键。
-- Skills 同步结果现在会保存缓存，重启应用后也能先显示已保存的 Skills，再等待 Apple Notes 刷新完成。
+- 新增全局 Skills Launcher，可在 Apple Notes 之外对选中的文字使用已保存的 Skills。
+- 当 Notomo 能安全回到原应用时，Skills 结果现在可以直接替换原选区，或插入到选区下方；复制和继续聊天仍然可用。
+- 改进 Skills Launcher 和内联工具栏的位置判断，鼠标选区、双击选中等场景下，面板会更稳定地出现在当前文字附近。
+- 点击 Skills Launcher 外部时，现在会更干净地关闭面板。
+- Codex 相关 AI 操作响应更快：Notomo 会复用已预热的会话，并更早准备 Inline AI 和助手模型选择。
+- 改进后台 AI 会话清理和 Gemini CLI 处理，让无界面运行更稳定。
+
 ]]>
       </description>
       <description xml:lang='zh-Hant' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.6 更新內容
+        <![CDATA[## Notomo 0.4.7 更新內容
 
-- 新增命令面板，可在 Apple Notes 中快速開啟 Quick Open、AI 助手、設定，以及筆記匯出相關操作。
-- 新增筆記匯出操作：可將目前選取的筆記複製為 Markdown 或純文字、複製 Apple Notes 連結，或儲存為 Markdown / PDF 檔案。
-- 改進 Apple Notes 匯出解析，複製和匯出的筆記會更好地保留標題、清單、引用、程式碼區塊和檔名。
-- 讓 Inline AI 套用結果時更安全：取代或插入文字前，會確認焦點仍在 Apple Notes。
-- 改進 Quick Open 和設定介面的可讀性，包括更清楚的載入狀態、分區說明、側邊欄圖示，以及可設定的命令面板快捷鍵。
-- Skills 同步結果現在會保存快取，重新啟動應用程式後也能先顯示已保存的 Skills，再等待 Apple Notes 重新整理完成。
+- 新增全域 Skills Launcher，可在 Apple Notes 之外對選取的文字使用已儲存的 Skills。
+- 當 Notomo 能安全回到原應用程式時，Skills 結果現在可以直接取代原選區，或插入到選區下方；複製和繼續聊天仍然可用。
+- 改進 Skills Launcher 和內聯工具列的位置判斷，滑鼠選區、雙擊選取等情境下，面板會更穩定地出現在目前文字附近。
+- 點擊 Skills Launcher 外部時，現在會更乾淨地關閉面板。
+- Codex 相關 AI 操作回應更快：Notomo 會重複使用已預熱的會話，並更早準備 Inline AI 和助手模型選擇。
+- 改進背景 AI 會話清理和 Gemini CLI 處理，讓無介面執行更穩定。
+
 ]]>
       </description>
     </item>
