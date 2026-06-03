@@ -3,57 +3,49 @@
   <channel>
     <title>Notomo</title>
     <item>
-      <title>0.4.7</title>
-      <pubDate>Tue, 02 Jun 2026 21:39:15 +0800</pubDate>
-      <sparkle:version>26</sparkle:version>
-      <sparkle:shortVersionString>0.4.7</sparkle:shortVersionString>
+      <title>0.4.8</title>
+      <pubDate>Wed, 03 Jun 2026 16:26:15 +0800</pubDate>
+      <sparkle:version>28</sparkle:version>
+      <sparkle:shortVersionString>0.4.8</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <enclosure url='https://natsustan.github.io/notomo-app/Notomo.zip' length='13541787' type='application/octet-stream' sparkle:edSignature='i4XpezpFsGZaEbwvAcsya1YawmsCXHmA7PqwtzeyqDG77fk0g+xjwMoYTW0eDmzIknLFLclNcDyGXV/hk0TmBA=='/>
+      <enclosure url='https://natsustan.github.io/notomo-app/Notomo.zip' length='13592239' type='application/octet-stream' sparkle:edSignature='7nBMfFMo9QwKaCRhVOikaTehPEOihcy7IQy5C6bM9SWpdSajDIlBcT4G8fieILjgCm9+l8pr+tWR2UBgQ30kAA=='/>
       <description xml:lang='en' sparkle:format='markdown'>
-        <![CDATA[## What's new in Notomo 0.4.7
+        <![CDATA[## What's new in Notomo 0.4.8
 
-- Added a global Skills Launcher for using your saved Skills on selected text outside Apple Notes.
-- Skills results can now replace the original selection or insert text below it when Notomo can safely return to the source app; Copy and Continue in chat remain available.
-- Improved launcher and inline toolbar placement so panels appear more reliably near the current text selection, including after mouse selections and double-clicks.
-- Made the Skills Launcher dismiss cleanly when clicking outside it.
-- Made Codex-based AI actions feel faster by reusing warm sessions and preparing Inline AI and assistant model choices earlier.
-- Improved background AI session cleanup and Gemini CLI handling for more stable headless runs.
+- Added PopClip support for sending selected text directly into the Skills Launcher.
+- Added menu bar shortcut hints so it is easier to see how to open the AI assistant.
+- Improved Inline AI copy behavior, including clearer handling when a result has no changes to apply.
+- Made Inline AI result previews better at recognizing unchanged output, so Notomo avoids offering confusing apply actions.
 
 ]]>
       </description>
       <description xml:lang='ja' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.7 の新機能
+        <![CDATA[## Notomo 0.4.8 の新機能
 
-- Apple Notes 以外で選択したテキストに保存済み Skills を使える、グローバル Skills Launcher を追加しました。
-- Notomo が元のアプリへ安全に戻れる場合、Skills の結果で元の選択範囲を置き換えたり、その下に挿入したりできるようになりました。コピーとチャットで続ける操作も引き続き使えます。
-- Skills Launcher とインラインツールバーの表示位置を改善しました。マウス選択やダブルクリック選択のあとでも、現在のテキスト付近により安定して表示されます。
-- Skills Launcher の外側をクリックしたときに、パネルが自然に閉じるようになりました。
-- Codex を使う AI 操作がより速く感じられるよう、ウォーム済みセッションの再利用と、Inline AI やアシスタントのモデル選択の事前準備を改善しました。
-- バックグラウンドの AI セッション整理と Gemini CLI の扱いを改善し、ヘッドレス実行の安定性を高めました。
+- PopClip に対応し、選択したテキストを直接 Skills Launcher に渡せるようになりました。
+- メニューバーに AI アシスタントのショートカットを表示し、開き方を確認しやすくしました。
+- Inline AI のコピー操作を改善し、適用できる変更がない結果もよりわかりやすく扱うようにしました。
+- Inline AI の結果プレビューで変更なしの出力をより正確に認識し、紛らわしい適用操作を出しにくくしました。
 
 ]]>
       </description>
       <description xml:lang='zh-Hans' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.7 更新内容
+        <![CDATA[## Notomo 0.4.8 更新内容
 
-- 新增全局 Skills Launcher，可在 Apple Notes 之外对选中的文字使用已保存的 Skills。
-- 当 Notomo 能安全回到原应用时，Skills 结果现在可以直接替换原选区，或插入到选区下方；复制和继续聊天仍然可用。
-- 改进 Skills Launcher 和内联工具栏的位置判断，鼠标选区、双击选中等场景下，面板会更稳定地出现在当前文字附近。
-- 点击 Skills Launcher 外部时，现在会更干净地关闭面板。
-- Codex 相关 AI 操作响应更快：Notomo 会复用已预热的会话，并更早准备 Inline AI 和助手模型选择。
-- 改进后台 AI 会话清理和 Gemini CLI 处理，让无界面运行更稳定。
+- 新增 PopClip 支持，可把选中的文字直接交给 Skills Launcher 处理。
+- 在菜单栏中显示 AI 助手快捷键，方便查看如何打开助手。
+- 改进 Inline AI 的复制体验，包括更清楚地处理“没有可应用改动”的结果。
+- 改进 Inline AI 结果预览对无改动内容的识别，避免出现容易误解的应用操作。
 
 ]]>
       </description>
       <description xml:lang='zh-Hant' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.7 更新內容
+        <![CDATA[## Notomo 0.4.8 更新內容
 
-- 新增全域 Skills Launcher，可在 Apple Notes 之外對選取的文字使用已儲存的 Skills。
-- 當 Notomo 能安全回到原應用程式時，Skills 結果現在可以直接取代原選區，或插入到選區下方；複製和繼續聊天仍然可用。
-- 改進 Skills Launcher 和內聯工具列的位置判斷，滑鼠選區、雙擊選取等情境下，面板會更穩定地出現在目前文字附近。
-- 點擊 Skills Launcher 外部時，現在會更乾淨地關閉面板。
-- Codex 相關 AI 操作回應更快：Notomo 會重複使用已預熱的會話，並更早準備 Inline AI 和助手模型選擇。
-- 改進背景 AI 會話清理和 Gemini CLI 處理，讓無介面執行更穩定。
+- 新增 PopClip 支援，可把選取的文字直接交給 Skills Launcher 處理。
+- 在選單列中顯示 AI 助手快捷鍵，方便查看如何開啟助手。
+- 改進 Inline AI 的複製體驗，包括更清楚地處理「沒有可套用改動」的結果。
+- 改進 Inline AI 結果預覽對無改動內容的辨識，避免出現容易誤解的套用操作。
 
 ]]>
       </description>
