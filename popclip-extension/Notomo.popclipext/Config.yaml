@@ -1,0 +1,9 @@
+identifier: com.notomo.Notomo.PopClip
+popclip version: 4050
+name: Notomo
+icon: icon.svg
+description: Open the Notomo Skills Launcher with selected text.
+requirements: [text]
+interpreter: /bin/zsh
+shell script file: notomo.sh
+after: show-status
