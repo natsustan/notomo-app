@@ -3,50 +3,50 @@
   <channel>
     <title>Notomo</title>
     <item>
-      <title>0.4.8</title>
-      <pubDate>Wed, 03 Jun 2026 16:26:15 +0800</pubDate>
-      <sparkle:version>28</sparkle:version>
-      <sparkle:shortVersionString>0.4.8</sparkle:shortVersionString>
+      <title>0.4.9</title>
+      <pubDate>Thu, 04 Jun 2026 21:37:01 +0800</pubDate>
+      <sparkle:version>31</sparkle:version>
+      <sparkle:shortVersionString>0.4.9</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <enclosure url='https://natsustan.github.io/notomo-app/Notomo.zip' length='13592239' type='application/octet-stream' sparkle:edSignature='7nBMfFMo9QwKaCRhVOikaTehPEOihcy7IQy5C6bM9SWpdSajDIlBcT4G8fieILjgCm9+l8pr+tWR2UBgQ30kAA=='/>
+      <enclosure url='https://natsustan.github.io/notomo-app/Notomo.zip' length='13744267' type='application/octet-stream' sparkle:edSignature='wNP8eOAMYXnjqFZHXXbXfFPHO07pRjp34ZdAEl0iXIg2Y8ci5P6T1xh08HXwcN6ne1H1CYy1QyVwTAE+k71kDQ=='/>
       <description xml:lang='en' sparkle:format='markdown'>
-        <![CDATA[## What's new in Notomo 0.4.8
+        <![CDATA[## What's new in Notomo 0.4.9
 
-- Added PopClip support for sending selected text directly into the Skills Launcher.
-- Added menu bar shortcut hints so it is easier to see how to open the AI assistant.
-- Improved Inline AI copy behavior, including clearer handling when a result has no changes to apply.
-- Made Inline AI result previews better at recognizing unchanged output, so Notomo avoids offering confusing apply actions.
-
+- AI now connects through ChatGPT sign-in, making setup clearer and removing the old local helper dependency.
+- Added a menu bar entry for opening the Skills Launcher directly.
+- Improved keyboard handling around Apple Notes, slash triggers, and Notomo panels to reduce stalls while typing.
+- Made Inline AI status and loading panels more compact, stable, and better fitted to their content.
+- Softened the AI assistant panel visuals with calmer glass surfaces.
 ]]>
       </description>
       <description xml:lang='ja' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.8 の新機能
+        <![CDATA[## Notomo 0.4.9 の新機能
 
-- PopClip に対応し、選択したテキストを直接 Skills Launcher に渡せるようになりました。
-- メニューバーに AI アシスタントのショートカットを表示し、開き方を確認しやすくしました。
-- Inline AI のコピー操作を改善し、適用できる変更がない結果もよりわかりやすく扱うようにしました。
-- Inline AI の結果プレビューで変更なしの出力をより正確に認識し、紛らわしい適用操作を出しにくくしました。
-
+- AI が ChatGPT サインインで接続されるようになり、設定がわかりやすくなり、以前のローカル補助サービスへの依存もなくなりました。
+- メニューバーから Skills Launcher を直接開ける項目を追加しました。
+- Apple Notes、スラッシュトリガー、Notomo パネル周りのキーボード処理を改善し、入力中の固まりにくさを高めました。
+- Inline AI の状態表示と読み込みパネルをよりコンパクトで安定した表示にし、内容幅に合いやすくしました。
+- AI アシスタントパネルの見た目を調整し、ガラス表現をより落ち着いた印象にしました。
 ]]>
       </description>
       <description xml:lang='zh-Hans' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.8 更新内容
+        <![CDATA[## Notomo 0.4.9 更新内容
 
-- 新增 PopClip 支持，可把选中的文字直接交给 Skills Launcher 处理。
-- 在菜单栏中显示 AI 助手快捷键，方便查看如何打开助手。
-- 改进 Inline AI 的复制体验，包括更清楚地处理“没有可应用改动”的结果。
-- 改进 Inline AI 结果预览对无改动内容的识别，避免出现容易误解的应用操作。
-
+- AI 现在通过 ChatGPT 登录连接，设置更清楚，也不再依赖旧的本地辅助服务。
+- 在菜单栏新增 Skills Launcher 入口，可直接打开。
+- 改进 Apple Notes、斜杠触发和 Notomo 面板之间的键盘处理，减少输入时的卡顿。
+- 让 Inline AI 的状态和加载面板更紧凑、更稳定，也更贴合内容宽度。
+- 调整 AI 助手面板视觉，玻璃质感更柔和。
 ]]>
       </description>
       <description xml:lang='zh-Hant' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.8 更新內容
+        <![CDATA[## Notomo 0.4.9 更新內容
 
-- 新增 PopClip 支援，可把選取的文字直接交給 Skills Launcher 處理。
-- 在選單列中顯示 AI 助手快捷鍵，方便查看如何開啟助手。
-- 改進 Inline AI 的複製體驗，包括更清楚地處理「沒有可套用改動」的結果。
-- 改進 Inline AI 結果預覽對無改動內容的辨識，避免出現容易誤解的套用操作。
-
+- AI 現在透過 ChatGPT 登入連接，設定更清楚，也不再依賴舊的本機輔助服務。
+- 在選單列新增 Skills Launcher 入口，可直接開啟。
+- 改進 Apple Notes、斜線觸發和 Notomo 面板之間的鍵盤處理，減少輸入時的卡頓。
+- 讓 Inline AI 的狀態和載入面板更緊湊、更穩定，也更貼合內容寬度。
+- 調整 AI 助手面板視覺，玻璃質感更柔和。
 ]]>
       </description>
     </item>
