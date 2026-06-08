@@ -3,54 +3,46 @@
   <channel>
     <title>Notomo</title>
     <item>
-      <title>0.4.10</title>
-      <pubDate>Fri, 05 Jun 2026 15:11:08 +0800</pubDate>
-      <sparkle:version>36</sparkle:version>
-      <sparkle:shortVersionString>0.4.10</sparkle:shortVersionString>
+      <title>0.4.12</title>
+      <pubDate>Mon, 08 Jun 2026 14:07:51 +0800</pubDate>
+      <sparkle:version>38</sparkle:version>
+      <sparkle:shortVersionString>0.4.12</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <enclosure url='https://natsustan.github.io/notomo-app/Notomo.zip' length='13829010' type='application/octet-stream' sparkle:edSignature='JoDm0+2c82naIjWHi5wYG5P9mhQAtPNKSEa/I/KAC1h32BobqMGakNa4zp2OwFtDyM9gTuDZHq5vH+jUErHnDQ=='/>
+      <enclosure url='https://natsustan.github.io/notomo-app/Notomo.zip' length='14092418' type='application/octet-stream' sparkle:edSignature='eFBGCHC03GWaVcS6P6TLrGp2WeP1C8X5YoNtC6pjU5di/Lto4eDNXQQS6V2JnebC/JAJI9TPfPjQ96ILeJgZCg=='/>
       <description xml:lang='en' sparkle:format='markdown'>
-        <![CDATA[## What's new in Notomo 0.4.10
+        <![CDATA[## What's new in Notomo 0.4.12
 
-- Added a built-in Skills library so you can quickly set up common actions like Improve Writing, Proofread, Explain, and Reformat.
-- Improved Skills setup in Settings with clearer folder creation, add feedback, and refresh behavior.
-- Renamed the selection launcher wording to Actions, making the panel clearer when launched from selected text or PopClip.
-- Improved ChatGPT follow-up context when continuing an Inline AI or Actions result in the assistant.
-- Hid the inline formatting toolbar when only an Apple Notes attachment is selected.
-- Refined Settings organization, provider status labels, translations, and app launch handling.
+- Added a web search control in the assistant, so you can choose whether replies should avoid the web, decide automatically, or search the web.
+- Added source links for web-backed assistant replies, making it easier to see where outside information came from.
+- Improved assistant handling of web search progress and results so searched replies feel clearer while they are being prepared.
+- Fixed ChatGPT tool handling so web search, image generation, and other hosted tools stay correctly separated.
 ]]>
       </description>
       <description xml:lang='ja' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.10 の新機能
+        <![CDATA[## Notomo 0.4.12 の新機能
 
-- Improve Writing、Proofread、Explain、Reformat などのよく使うアクションをすばやく追加できる、内蔵 Skills ライブラリを追加しました。
-- 設定での Skills 初期設定を改善し、フォルダ作成、内蔵 Skills の追加、更新状態のフィードバックをわかりやすくしました。
-- 選択テキストから開くランチャーの表記を Actions に整え、選択範囲や PopClip から開いたときの意味をわかりやすくしました。
-- Inline AI や Actions の結果をアシスタントで続けて相談するとき、ChatGPT に渡す文脈を改善しました。
-- Apple Notes で添付ファイルだけを選択しているときは、インライン書式ツールバーを表示しないようにしました。
-- 設定画面の分類、AI プロバイダーの状態表示、翻訳、アプリ起動時の処理を調整しました。
+- アシスタントに Web 検索の切り替えを追加し、Web を使わない、自動で判断する、必ず検索する、を選べるようにしました。
+- Web 情報を使ったアシスタント回答に参照元リンクを追加し、外部情報の出典を確認しやすくしました。
+- Web 検索の進行状況と結果の扱いを改善し、検索を使う回答が準備されている間も状態がわかりやすくなりました。
+- ChatGPT のツール処理を修正し、Web 検索、画像生成、その他の内蔵ツールが正しく分かれて動くようにしました。
 ]]>
       </description>
       <description xml:lang='zh-Hans' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.10 更新内容
+        <![CDATA[## Notomo 0.4.12 更新内容
 
-- 新增内置 Skills 库，可快速添加“改进写作”“校对”“解释”“重新排版”等常用动作。
-- 改进设置里的 Skills 初始化流程，创建文件夹、添加内置 Skills 和刷新状态时反馈更清楚。
-- 将选区启动面板里的文案调整为 Actions，从选中文字或 PopClip 打开时更容易理解。
-- 改进从 Inline AI 或 Actions 结果继续对话时的 ChatGPT 上下文，让后续追问更连贯。
-- 当 Apple Notes 里只选中了附件时，不再显示内联格式工具栏。
-- 调整设置页分组、AI 提供方状态标签、翻译和应用启动处理。
+- 助手新增联网搜索控制：你可以让回复避开网络、自动判断是否需要搜索，或明确要求联网搜索。
+- 使用联网信息的助手回复现在会附上来源链接，方便你查看外部信息从哪里来。
+- 优化联网搜索的进度和结果呈现，让搜索型回复在准备过程中更容易看懂。
+- 修正 ChatGPT 工具处理，让联网搜索、图片生成和其他内置工具各自保持正确的工作方式。
 ]]>
       </description>
       <description xml:lang='zh-Hant' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.10 更新內容
+        <![CDATA[## Notomo 0.4.12 更新內容
 
-- 新增內建 Skills 資料庫，可快速加入「改進寫作」「校對」「解釋」「重新排版」等常用動作。
-- 改進設定裡的 Skills 初始化流程，建立資料夾、加入內建 Skills 和重新整理狀態時回饋更清楚。
-- 將選取內容啟動面板裡的文案調整為 Actions，從選取文字或 PopClip 開啟時更容易理解。
-- 改進從 Inline AI 或 Actions 結果繼續對話時的 ChatGPT 上下文，讓後續追問更連貫。
-- 當 Apple Notes 裡只選中了附件時，不再顯示內嵌格式工具列。
-- 調整設定頁分組、AI 提供方狀態標籤、翻譯和應用程式啟動處理。
+- 助手新增連網搜尋控制：你可以讓回覆避開網路、自動判斷是否需要搜尋，或明確要求連網搜尋。
+- 使用連網資訊的助手回覆現在會附上來源連結，方便你查看外部資訊從哪裡來。
+- 優化連網搜尋的進度和結果呈現，讓搜尋型回覆在準備過程中更容易看懂。
+- 修正 ChatGPT 工具處理，讓連網搜尋、圖片生成和其他內建工具各自保持正確的運作方式。
 ]]>
       </description>
     </item>
