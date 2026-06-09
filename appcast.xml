@@ -3,46 +3,42 @@
   <channel>
     <title>Notomo</title>
     <item>
-      <title>0.4.12</title>
-      <pubDate>Mon, 08 Jun 2026 14:07:51 +0800</pubDate>
-      <sparkle:version>38</sparkle:version>
-      <sparkle:shortVersionString>0.4.12</sparkle:shortVersionString>
+      <title>0.4.13</title>
+      <pubDate>Tue, 09 Jun 2026 10:12:44 +0800</pubDate>
+      <sparkle:version>39</sparkle:version>
+      <sparkle:shortVersionString>0.4.13</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <enclosure url='https://natsustan.github.io/notomo-app/Notomo.zip' length='14092418' type='application/octet-stream' sparkle:edSignature='eFBGCHC03GWaVcS6P6TLrGp2WeP1C8X5YoNtC6pjU5di/Lto4eDNXQQS6V2JnebC/JAJI9TPfPjQ96ILeJgZCg=='/>
+      <enclosure url='https://natsustan.github.io/notomo-app/Notomo.zip' length='14194065' type='application/octet-stream' sparkle:edSignature='avw0Yd1S1prrSADPqUTCkrCV2SFjizqh56KmxEwrZegbcmuRUoeRbCOMrKCIVahMNV1AzRwGFUPLuIG2XFJUAQ=='/>
       <description xml:lang='en' sparkle:format='markdown'>
-        <![CDATA[## What's new in Notomo 0.4.12
+        <![CDATA[## What's new in Notomo 0.4.13
 
-- Added a web search control in the assistant, so you can choose whether replies should avoid the web, decide automatically, or search the web.
-- Added source links for web-backed assistant replies, making it easier to see where outside information came from.
-- Improved assistant handling of web search progress and results so searched replies feel clearer while they are being prepared.
-- Fixed ChatGPT tool handling so web search, image generation, and other hosted tools stay correctly separated.
+- Added OpenRouter as an AI provider, so you can connect an OpenRouter API key and use OpenRouter models in the assistant.
+- Added OpenRouter model fetching and selection in Settings, including support for choosing fetched models or adding a custom model ID.
+- Updated the assistant prompt placeholder to make it clearer that you can ask anything and use `@` for note context and skills.
 ]]>
       </description>
       <description xml:lang='ja' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.12 の新機能
+        <![CDATA[## Notomo 0.4.13 の新機能
 
-- アシスタントに Web 検索の切り替えを追加し、Web を使わない、自動で判断する、必ず検索する、を選べるようにしました。
-- Web 情報を使ったアシスタント回答に参照元リンクを追加し、外部情報の出典を確認しやすくしました。
-- Web 検索の進行状況と結果の扱いを改善し、検索を使う回答が準備されている間も状態がわかりやすくなりました。
-- ChatGPT のツール処理を修正し、Web 検索、画像生成、その他の内蔵ツールが正しく分かれて動くようにしました。
+- AI プロバイダーとして OpenRouter を追加しました。OpenRouter API キーを接続して、アシスタントで OpenRouter モデルを使えるようになりました。
+- 設定で OpenRouter のモデル取得と選択に対応しました。取得したモデルから選ぶことも、カスタムモデル ID を手動で追加することもできます。
+- アシスタントの入力欄のプレースホルダーを更新し、自由に質問できることと、`@` でノートの文脈や Skills を追加できることがわかりやすくなりました。
 ]]>
       </description>
       <description xml:lang='zh-Hans' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.12 更新内容
+        <![CDATA[## Notomo 0.4.13 更新内容
 
-- 助手新增联网搜索控制：你可以让回复避开网络、自动判断是否需要搜索，或明确要求联网搜索。
-- 使用联网信息的助手回复现在会附上来源链接，方便你查看外部信息从哪里来。
-- 优化联网搜索的进度和结果呈现，让搜索型回复在准备过程中更容易看懂。
-- 修正 ChatGPT 工具处理，让联网搜索、图片生成和其他内置工具各自保持正确的工作方式。
+- 新增 OpenRouter 作为 AI 提供方：你可以连接 OpenRouter API 密钥，并在助手中使用 OpenRouter 模型。
+- 设置中新增 OpenRouter 模型获取和选择，可以从获取到的模型中挑选，也可以手动添加自定义模型 ID。
+- 更新助手输入框提示，让它更清楚地说明你可以直接提问，也可以用 `@` 添加笔记上下文和 Skills。
 ]]>
       </description>
       <description xml:lang='zh-Hant' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.12 更新內容
+        <![CDATA[## Notomo 0.4.13 更新內容
 
-- 助手新增連網搜尋控制：你可以讓回覆避開網路、自動判斷是否需要搜尋，或明確要求連網搜尋。
-- 使用連網資訊的助手回覆現在會附上來源連結，方便你查看外部資訊從哪裡來。
-- 優化連網搜尋的進度和結果呈現，讓搜尋型回覆在準備過程中更容易看懂。
-- 修正 ChatGPT 工具處理，讓連網搜尋、圖片生成和其他內建工具各自保持正確的運作方式。
+- 新增 OpenRouter 作為 AI 提供方：你可以連接 OpenRouter API 金鑰，並在助手中使用 OpenRouter 模型。
+- 設定中新增 OpenRouter 模型取得和選擇，可以從取得到的模型中挑選，也可以手動加入自訂模型 ID。
+- 更新助手輸入框提示，讓它更清楚地說明你可以直接提問，也可以用 `@` 加入筆記上下文和 Skills。
 ]]>
       </description>
     </item>
