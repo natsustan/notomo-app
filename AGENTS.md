@@ -1,7 +1,7 @@
 # AGENTS.md
 
 ## Repository purpose
-Public website and Sparkle update feed for Notomo, a macOS app. Source repo: `https://github.com/natsustan/notomo-app`. Hosted via GitHub Pages at `https://natsustan.github.io/notomo-app/` — pushes to the default branch are published directly (no build step), so files in this repo map 1:1 to URLs under that origin (e.g. `appcast.xml` → `https://natsustan.github.io/notomo-app/appcast.xml`, `Notomo.zip` → `https://natsustan.github.io/notomo-app/Notomo.zip`, which is the URL Sparkle clients fetch).
+Public website and Sparkle update feed for Notomo, a macOS app. Source repo: `https://github.com/natsustan/notomo-app`. Hosted via GitHub Pages with the custom domain `https://notomo.app/` — pushes to the default branch are published directly (no build step), so files in this repo map 1:1 to URLs under that origin (e.g. `appcast.xml` → `https://notomo.app/appcast.xml`, `Notomo.zip` → `https://notomo.app/Notomo.zip`, which is the URL Sparkle clients fetch).
 
 ## Structure
 - `index.html` — Landing page (currently a placeholder).

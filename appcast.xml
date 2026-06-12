@@ -8,7 +8,7 @@
       <sparkle:version>40</sparkle:version>
       <sparkle:shortVersionString>0.4.14</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <enclosure url='https://natsustan.github.io/notomo-app/Notomo.zip' length='14219292' type='application/octet-stream' sparkle:edSignature='4cqaEj96c1xSYtPPfC4R4qFli5/F3iLXO+HfBet44C26g6myMTFxSygx9PXJm3KCRi2zxzjLN8wfUI/KLWfFBw=='/>
+      <enclosure url='https://notomo.app/Notomo.zip' length='14219292' type='application/octet-stream' sparkle:edSignature='4cqaEj96c1xSYtPPfC4R4qFli5/F3iLXO+HfBet44C26g6myMTFxSygx9PXJm3KCRi2zxzjLN8wfUI/KLWfFBw=='/>
       <description xml:lang='en' sparkle:format='markdown'>
         <![CDATA[## What's new in Notomo 0.4.14
 
