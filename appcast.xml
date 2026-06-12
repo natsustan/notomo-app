@@ -3,42 +3,42 @@
   <channel>
     <title>Notomo</title>
     <item>
-      <title>0.4.13</title>
-      <pubDate>Tue, 09 Jun 2026 10:12:44 +0800</pubDate>
-      <sparkle:version>39</sparkle:version>
-      <sparkle:shortVersionString>0.4.13</sparkle:shortVersionString>
+      <title>0.4.14</title>
+      <pubDate>Fri, 12 Jun 2026 09:22:18 +0800</pubDate>
+      <sparkle:version>40</sparkle:version>
+      <sparkle:shortVersionString>0.4.14</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <enclosure url='https://natsustan.github.io/notomo-app/Notomo.zip' length='14194065' type='application/octet-stream' sparkle:edSignature='avw0Yd1S1prrSADPqUTCkrCV2SFjizqh56KmxEwrZegbcmuRUoeRbCOMrKCIVahMNV1AzRwGFUPLuIG2XFJUAQ=='/>
+      <enclosure url='https://natsustan.github.io/notomo-app/Notomo.zip' length='14219292' type='application/octet-stream' sparkle:edSignature='4cqaEj96c1xSYtPPfC4R4qFli5/F3iLXO+HfBet44C26g6myMTFxSygx9PXJm3KCRi2zxzjLN8wfUI/KLWfFBw=='/>
       <description xml:lang='en' sparkle:format='markdown'>
-        <![CDATA[## What's new in Notomo 0.4.13
+        <![CDATA[## What's new in Notomo 0.4.14
 
-- Added OpenRouter as an AI provider, so you can connect an OpenRouter API key and use OpenRouter models in the assistant.
-- Added OpenRouter model fetching and selection in Settings, including support for choosing fetched models or adding a custom model ID.
-- Updated the assistant prompt placeholder to make it clearer that you can ask anything and use `@` for note context and skills.
+- Polished the assistant `@` picker so longer skill lists scroll more smoothly and the highlighted item stays visible while you move through suggestions.
+- Fixed the assistant `@` picker so a selected skill mention no longer reopens the picker when you delete the trailing space after it.
+- Tightened Apple Notes shortcut handling so Notes-specific shortcuts only run when the key event really belongs to Apple Notes, avoiding accidental interception in other apps.
 ]]>
       </description>
       <description xml:lang='ja' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.13 の新機能
+        <![CDATA[## Notomo 0.4.14 の新機能
 
-- AI プロバイダーとして OpenRouter を追加しました。OpenRouter API キーを接続して、アシスタントで OpenRouter モデルを使えるようになりました。
-- 設定で OpenRouter のモデル取得と選択に対応しました。取得したモデルから選ぶことも、カスタムモデル ID を手動で追加することもできます。
-- アシスタントの入力欄のプレースホルダーを更新し、自由に質問できることと、`@` でノートの文脈や Skills を追加できることがわかりやすくなりました。
+- アシスタントの `@` ピッカーを磨き込み、長い Skills リストでもスクロールしやすく、キーボードで移動したときにハイライト項目が見えるようになりました。
+- 選択済み Skill メンションの直後のスペースを削除しても、アシスタントの `@` ピッカーが誤って再表示されないようにしました。
+- Apple Notes 用ショートカットの処理を厳密にし、キー入力が本当に Apple Notes に属しているときだけ Notes 専用ショートカットが動くようにしました。
 ]]>
       </description>
       <description xml:lang='zh-Hans' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.13 更新内容
+        <![CDATA[## Notomo 0.4.14 更新内容
 
-- 新增 OpenRouter 作为 AI 提供方：你可以连接 OpenRouter API 密钥，并在助手中使用 OpenRouter 模型。
-- 设置中新增 OpenRouter 模型获取和选择，可以从获取到的模型中挑选，也可以手动添加自定义模型 ID。
-- 更新助手输入框提示，让它更清楚地说明你可以直接提问，也可以用 `@` 添加笔记上下文和 Skills。
+- 打磨助手的 `@` 选择器：较长的 Skills 列表现在滚动更顺畅，使用键盘移动时高亮项会保持可见。
+- 修正助手的 `@` 选择器：选中 Skill 后，如果删除它后面的空格，选择器不会再误弹出。
+- 收紧 Apple Notes 快捷键处理：只在按键确实属于 Apple Notes 时触发 Notes 专用快捷键，避免在其他应用中被误拦截。
 ]]>
       </description>
       <description xml:lang='zh-Hant' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.13 更新內容
+        <![CDATA[## Notomo 0.4.14 更新內容
 
-- 新增 OpenRouter 作為 AI 提供方：你可以連接 OpenRouter API 金鑰，並在助手中使用 OpenRouter 模型。
-- 設定中新增 OpenRouter 模型取得和選擇，可以從取得到的模型中挑選，也可以手動加入自訂模型 ID。
-- 更新助手輸入框提示，讓它更清楚地說明你可以直接提問，也可以用 `@` 加入筆記上下文和 Skills。
+- 打磨助手的 `@` 選擇器：較長的 Skills 列表現在捲動更順暢，使用鍵盤移動時高亮項會保持可見。
+- 修正助手的 `@` 選擇器：選中 Skill 後，如果刪除它後面的空格，選擇器不會再誤彈出。
+- 收緊 Apple Notes 快捷鍵處理：只在按鍵確實屬於 Apple Notes 時觸發 Notes 專用快捷鍵，避免在其他應用中被誤攔截。
 ]]>
       </description>
     </item>
