@@ -3,42 +3,46 @@
   <channel>
     <title>Notomo</title>
     <item>
-      <title>0.4.14</title>
-      <pubDate>Fri, 12 Jun 2026 09:22:18 +0800</pubDate>
-      <sparkle:version>40</sparkle:version>
-      <sparkle:shortVersionString>0.4.14</sparkle:shortVersionString>
+      <title>0.4.15</title>
+      <pubDate>Sat, 13 Jun 2026 07:26:36 +0800</pubDate>
+      <sparkle:version>42</sparkle:version>
+      <sparkle:shortVersionString>0.4.15</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <enclosure url='https://notomo.app/Notomo.zip' length='14219292' type='application/octet-stream' sparkle:edSignature='4cqaEj96c1xSYtPPfC4R4qFli5/F3iLXO+HfBet44C26g6myMTFxSygx9PXJm3KCRi2zxzjLN8wfUI/KLWfFBw=='/>
+      <enclosure url='https://notomo.app/Notomo.zip' length='14312048' type='application/octet-stream' sparkle:edSignature='vFQSwFSdUMCpNbA/Rx5h9t0RU9O7Zmj17Hvnn7Ein6hrWSOrVhcXG6aAHsG/cx51LZJoXrTrdi0zjpBfmC1UCQ=='/>
       <description xml:lang='en' sparkle:format='markdown'>
-        <![CDATA[## What's new in Notomo 0.4.14
+        <![CDATA[## What's new in Notomo 0.4.15
 
-- Polished the assistant `@` picker so longer skill lists scroll more smoothly and the highlighted item stays visible while you move through suggestions.
-- Fixed the assistant `@` picker so a selected skill mention no longer reopens the picker when you delete the trailing space after it.
-- Tightened Apple Notes shortcut handling so Notes-specific shortcuts only run when the key event really belongs to Apple Notes, avoiding accidental interception in other apps.
+- Added a unified model picker for Assistant, Settings, and Inline AI's “Retry with Model” flow, with clearer model grouping and selected-state handling.
+- Added per-model reasoning preferences so Assistant, Inline AI, and chat titles can keep the reasoning setting that fits each selected model.
+- Fixed reasoning sync when switching models, changing settings, or retrying Inline AI so each model uses its own saved reasoning choice.
+- Preserved the lightweight default for chat title generation so automatic titles do not accidentally use heavier reasoning settings.
 ]]>
       </description>
       <description xml:lang='ja' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.14 の新機能
+        <![CDATA[## Notomo 0.4.15 の新機能
 
-- アシスタントの `@` ピッカーを磨き込み、長い Skills リストでもスクロールしやすく、キーボードで移動したときにハイライト項目が見えるようになりました。
-- 選択済み Skill メンションの直後のスペースを削除しても、アシスタントの `@` ピッカーが誤って再表示されないようにしました。
-- Apple Notes 用ショートカットの処理を厳密にし、キー入力が本当に Apple Notes に属しているときだけ Notes 専用ショートカットが動くようにしました。
+- アシスタント、設定、Inline AI の「別のモデルで再試行」で共通のモデル選択パネルを使うようにし、モデルのグループ表示と現在の選択状態を見やすくしました。
+- モデルごとの reasoning 設定を保存できるようにしました。アシスタント、Inline AI、チャットタイトルで、それぞれ選択中のモデルに合った reasoning 設定を保持できます。
+- モデルの切り替え、設定変更、Inline AI の再試行時に reasoning 設定がずれないよう修正しました。各モデルに保存された reasoning 設定が使われます。
+- チャットタイトル生成の軽量なデフォルト設定を保ち、自動タイトル生成で意図せず重い reasoning 設定が使われないようにしました。
 ]]>
       </description>
       <description xml:lang='zh-Hans' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.14 更新内容
+        <![CDATA[## Notomo 0.4.15 更新内容
 
-- 打磨助手的 `@` 选择器：较长的 Skills 列表现在滚动更顺畅，使用键盘移动时高亮项会保持可见。
-- 修正助手的 `@` 选择器：选中 Skill 后，如果删除它后面的空格，选择器不会再误弹出。
-- 收紧 Apple Notes 快捷键处理：只在按键确实属于 Apple Notes 时触发 Notes 专用快捷键，避免在其他应用中被误拦截。
+- 新增统一的模型选择器：助手、设置和 Inline AI 的“换个模型重试”现在使用同一套选择面板，模型分组和当前选择更清楚。
+- 支持按模型记住 reasoning 设置：助手、Inline AI 和聊天标题可以分别保留适合当前模型的 reasoning 偏好。
+- 修正 reasoning 同步问题：切换模型、调整设置或重试 Inline AI 时，Notomo 会使用对应模型的 reasoning 设置，不再误沿用其他用途的选择。
+- 保留聊天标题的轻量默认设置，避免自动标题生成意外使用更重的 reasoning 配置。
 ]]>
       </description>
       <description xml:lang='zh-Hant' sparkle:format='markdown'>
-        <![CDATA[## Notomo 0.4.14 更新內容
+        <![CDATA[## Notomo 0.4.15 更新內容
 
-- 打磨助手的 `@` 選擇器：較長的 Skills 列表現在捲動更順暢，使用鍵盤移動時高亮項會保持可見。
-- 修正助手的 `@` 選擇器：選中 Skill 後，如果刪除它後面的空格，選擇器不會再誤彈出。
-- 收緊 Apple Notes 快捷鍵處理：只在按鍵確實屬於 Apple Notes 時觸發 Notes 專用快捷鍵，避免在其他應用中被誤攔截。
+- 新增統一的模型選擇器：助手、設定和 Inline AI 的「換個模型重試」現在使用同一套選擇面板，模型分組和目前選擇更清楚。
+- 支援按模型記住 reasoning 設定：助手、Inline AI 和聊天標題可以分別保留適合目前模型的 reasoning 偏好。
+- 修正 reasoning 同步問題：切換模型、調整設定或重試 Inline AI 時，Notomo 會使用對應模型的 reasoning 設定，不再誤沿用其他用途的選擇。
+- 保留聊天標題的輕量預設設定，避免自動標題生成意外使用更重的 reasoning 配置。
 ]]>
       </description>
     </item>

@@ -185,6 +185,18 @@
     <h1>Changelog</h1>
     <p class="intro">Release notes for Notomo.</p>
 
+    <article class="release" id="v0.4.15">
+      <header>
+        <h2>v0.4.15</h2>
+      </header>
+      <ul>
+        <li>Added a unified model picker for Assistant, Settings, and Inline AI&#39;s “Retry with Model” flow, with clearer model grouping and selected-state handling.</li>
+        <li>Added per-model reasoning preferences so Assistant, Inline AI, and chat titles can keep the reasoning setting that fits each selected model.</li>
+        <li>Fixed reasoning sync when switching models, changing settings, or retrying Inline AI so each model uses its own saved reasoning choice.</li>
+        <li>Preserved the lightweight default for chat title generation so automatic titles do not accidentally use heavier reasoning settings.</li>
+      </ul>
+    </article>
+
     <article class="release" id="v0.4.14">
       <header>
         <h2>v0.4.14</h2>
